@@ -28,20 +28,25 @@ export const MenuContainer = styled.aside`
     }
   }
 
-  @media screen and (min-width: 768px) {
-    width: 80px;
-    height: 100vh;
-    background-color: #1e293b;
-    flex-direction: column;
-    align-items: center;
-    .mobile-dashboard-icon {
-      display: none;
-    }
+ @media screen and (min-width: 768px) {
+  width: 80px;
+  min-height: 100vh;
+  background-color: #1e293b;
+  flex-direction: column;
+  align-items: center;
 
-    .menu-icon {
-      display: none;
-    }
+  position: fixed; /* 🔥 fixa o menu na lateral esquerda */
+  left: 0;
+  top: 0;
+
+  .mobile-dashboard-icon {
+    display: none;
   }
+
+  .menu-icon {
+    display: none;
+  }
+}
 `;
 
 export const MenuLinks = styled.div`
@@ -69,22 +74,32 @@ export const MenuLinks = styled.div`
 `;
 
 export const MenuLinksMobile = styled.div`
-  width: 300px;
-  height: 100vh;
-  display: none;
+  width: 250px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0; /* 🔹 lado direito */
+  display: flex; /* sempre flex */
   flex-direction: column;
   gap: 40px;
   color: white;
   padding: 20px;
-  background-color: #192433;
   padding-top: 80px;
+  background-color: #192433;
+  z-index: 99999;
+
+  /* inicia fora da tela e desliza para dentro */
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
 
   div {
     display: flex;
     gap: 10px;
+
     svg {
       color: #a0a8b8;
     }
+
     span {
       color: white;
       cursor: pointer;
@@ -98,8 +113,6 @@ export const MenuLinksMobile = styled.div`
   .exit {
     display: flex;
     height: 100%;
-  
-
     margin-top: auto;
 
     svg {
@@ -111,23 +124,11 @@ export const MenuLinksMobile = styled.div`
     }
   }
 
-  /* .x {
-    position: absolute;
-    right: 10px;
-    top: 20px;
-    
-      color: white;
-      cursor: pointer;
-      transition: .4s ease;
-      &:hover{
-        color: #a0a8b8;
-      }
-  
-  } */
   @media screen and (min-width: 768px) {
     display: none;
   }
 `;
+
 
 export const MenuExit = styled.div`
   display: none;
@@ -136,7 +137,7 @@ export const MenuExit = styled.div`
     display: flex;
     margin-top: auto;
     padding: 20px;
-
+ 
     svg {
       color: red;
 
