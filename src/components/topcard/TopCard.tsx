@@ -6,17 +6,17 @@ function TopCard() {
       <h2>Produtos em Alta</h2>
       <TopCardContent>
         <TopCardText>
-          <p>Produto A</p>
-          <p>Produto B</p>
-          <p>Produto C</p>
-          <p>Produto D</p>
+          <p>Xbox Series X</p>
+          <p>PlayStation 5</p>
+          <p>Bicicleta Trek</p>
+          <p>Apple Watch</p>
         </TopCardText>
 
         <TopCardText>
-          <p>$5,400</p>
-          <p>$3,100</p>
-          <p>$2,200</p>
-          <p>$1,750</p>
+          <p>R$ 5,400</p>
+          <p>R$ 5,100</p>
+          <p>R$ 3,200</p>
+          <p>R$ 1,750</p>
         </TopCardText>
       </TopCardContent>
     </TopCardContainer>

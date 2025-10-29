@@ -3,12 +3,14 @@ import styled from "styled-components";
 export const MenuContainer = styled.aside`
   display: flex;
   flex-direction: row;
+  position: fixed;
   width: 100%;
   height: 80px;
   background-color: #1e293b;
+  z-index: 999999999;
 
   .mobile-dashboard-icon {
-    position: absolute;
+    position: fixed;
     color: white;
     height: 80px;
     left: 15px;
@@ -16,7 +18,7 @@ export const MenuContainer = styled.aside`
   }
 
   .menu-icon {
-    position: absolute;
+    position: fixed;
     color: white;
     height: 80px;
     right: 15px;
@@ -35,7 +37,7 @@ export const MenuContainer = styled.aside`
   flex-direction: column;
   align-items: center;
 
-  position: fixed; /* 🔥 fixa o menu na lateral esquerda */
+  position: fixed;
   left: 0;
   top: 0;
 

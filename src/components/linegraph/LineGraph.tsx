@@ -21,7 +21,7 @@ const data = [
 ];
 
 export default function LineGraph() {
-  const legendPaddingTop = 25;   // espaço acima
+  const legendPaddingTop = 25; // espaço acima
   const legendPaddingBottom = 15; // espaço abaixo
 
   return (
@@ -61,26 +61,43 @@ export default function LineGraph() {
             activeDot={{ r: 7 }}
           />
 
-          {/* Legenda interna com padding em cima e embaixo */}
           <g>
-            <rect x={20} y={legendPaddingTop} width={80} height={20} fill="#38BDF8" rx={4} />
+            <rect
+              x={20}
+              y={legendPaddingTop}
+              width={80}
+              height={20}
+              fill="#38BDF8"
+              rx={4}
+            />
             <text
-              x={25}
-              y={legendPaddingTop + 14}
+              x={20 + 80 / 2}
+              y={legendPaddingTop + 20 / 2}
               fill="#0F172A"
               fontSize={12}
               fontWeight="bold"
+              textAnchor="middle"
+              dominantBaseline="middle"
             >
               Receita
             </text>
 
-            <rect x={120} y={legendPaddingTop} width={80} height={20} fill="#F97316" rx={4} />
+            <rect
+              x={120}
+              y={legendPaddingTop}
+              width={80}
+              height={20}
+              fill="#F97316"
+              rx={4}
+            />
             <text
-              x={125}
-              y={legendPaddingTop + 14}
+              x={120 + 80 / 2}
+              y={legendPaddingTop + 20 / 2}
               fill="#0F172A"
               fontSize={12}
               fontWeight="bold"
+              textAnchor="middle"
+              dominantBaseline="middle"
             >
               Despesa
             </text>

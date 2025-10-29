@@ -43,13 +43,45 @@ export default function BarGraph() {
 
           {/* Legenda interna com padding */}
           <g>
-            <rect x={20} y={legendPaddingTop} width={80} height={20} fill="#38BDF8" rx={4} />
-            <text x={25} y={legendPaddingTop + 14} fill="#0F172A" fontSize={12} fontWeight="bold">
+            {/* Retângulo Receita */}
+            <rect
+              x={20}
+              y={legendPaddingTop}
+              width={80}
+              height={20}
+              fill="#38BDF8"
+              rx={4}
+            />
+            <text
+              x={20 + 40} // centro horizontal (x + width / 2)
+              y={legendPaddingTop + 10} // centro vertical (y + height / 2)
+              fill="#0F172A"
+              fontSize={12}
+              fontWeight="bold"
+              textAnchor="middle"
+              dominantBaseline="middle"
+            >
               Vendas
             </text>
 
-            <rect x={110} y={legendPaddingTop} width={80} height={20} fill="#F97316" rx={4} />
-            <text x={115} y={legendPaddingTop + 14} fill="#0F172A" fontSize={12} fontWeight="bold">
+            {/* Retângulo Despesa */}
+            <rect
+              x={120}
+              y={legendPaddingTop}
+              width={80}
+              height={20}
+              fill="#F97316"
+              rx={4}
+            />
+            <text
+              x={120 + 40}
+              y={legendPaddingTop + 10}
+              fill="#0F172A"
+              fontSize={12}
+              fontWeight="bold"
+              textAnchor="middle"
+              dominantBaseline="middle"
+            >
               Lucro
             </text>
           </g>

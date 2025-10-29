@@ -15,7 +15,7 @@ function Card({title, price, percent}:CardContent) {
     <CardContainer>
         <h1>{title}</h1>
         <h2>{price}</h2>
-        <p style={{ color: isPositive ? '#94a3b8;' : 'red', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+        <p style={{ color: isPositive ? '#94a3b8' : 'red', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
         {isPositive ? <ChevronUp /> : <ChevronDown />}
         {percent}
       </p>

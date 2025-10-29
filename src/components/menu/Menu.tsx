@@ -19,6 +19,7 @@ import {
 } from "./Menu.styled";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 function Menu() {
   const [menuMobile, setMenuMobile] = useState(false);
@@ -46,8 +47,12 @@ function Menu() {
           className="h-8 w-8"
           style={{ color: "white", cursor: "default" }}
         />
-        <Home className="h-6 w-6" />
-        <Users className="h-6 w-6" />
+        <Link href='/home'>
+          <Home className="h-6 w-6" />
+        </Link>
+        <Link href='/clients'>
+          <Users className="h-6 w-6" />
+        </Link>
         <DollarSignIcon className="h-6 w-6" />
         <Settings className="h-6 w-6" />
       </MenuLinks>
@@ -57,35 +62,43 @@ function Menu() {
       ) : (
         <MenuIcon className="menu-icon" onClick={menuMobileControls} />
       )}
-   <MenuLinksMobile
-  style={{
-    transform: menuMobile ? "translateX(0)" : "translateX(100%)",
-  }}
->
-  <div>
-    <Home className="h-6 w-6" />
-    <span>Início</span>
-  </div>
-  <div>
-    <Users className="h-6 w-6" />
-    <span>Clientes</span>
-  </div>
-  <div>
-    <DollarSignIcon className="h-6 w-6" />
-    <span>Receitas</span>
-  </div>
-  <div>
-    <Settings className="h-6 w-6" />
-    <span>Configurações</span>
-  </div>
+      <MenuLinksMobile
+        style={{
+          transform: menuMobile ? "translateX(0)" : "translateX(100%)",
+        }}
+      >
+        <Link href="/home">
+          <div>
+            <Home className="h-6 w-6" />
+            <span>Início</span>
+          </div>
+        </Link>
+        <Link href="/clients">
+          <div>
+            <Users className="h-6 w-6" />
+            <span>Clientes</span>
+          </div>
+        </Link>
+        <div>
+          <DollarSignIcon className="h-6 w-6" />
+          <span>Receitas</span>
+        </div>
+        <div>
+          <Settings className="h-6 w-6" />
+          <span>Configurações</span>
+        </div>
 
-  <div className="exit">
-    <LogOut />
-    <span>Sair</span>
-  </div>
-</MenuLinksMobile>
+        <Link href='/'>
+          <div className="exit">
+            <LogOut />
+            <span>Sair</span>
+          </div>
+        </Link>
+      </MenuLinksMobile>
       <MenuExit>
-        <LogOut />
+        <Link href='/'>
+          <LogOut />
+        </Link>
       </MenuExit>
     </MenuContainer>
   );
