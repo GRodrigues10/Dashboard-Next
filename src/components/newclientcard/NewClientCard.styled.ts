@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NewClientCardContainer = styled.div `
-width: 240px;
+width: 100%;
 height: 180px;
 background-color: #1e293b;
 border-radius: 5px;
@@ -11,6 +11,10 @@ display: flex;
 flex-direction:column;
 align-items: center;
 justify-content: space-between;
+
+@media screen and (min-width:1200px){
+    width: 265px;
+}
 
 h1{
     font-size: 1.2rem;

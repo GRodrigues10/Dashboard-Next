@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const VipCardContainer = styled.div `
-width: 240px;
+width: 100%;
 height: 180px;
 background-color: #1e293b;
 display: flex;
@@ -11,6 +11,9 @@ padding: 20px;
 color: white;
 align-items: center;
 border-radius: 5px;
+@media screen and (min-width: 1200px) {
+    width: 265px;
+}
 h1{
     font-size: 1.3rem;
 }

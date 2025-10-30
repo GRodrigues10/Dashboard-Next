@@ -20,7 +20,7 @@ margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-
+padding-inline: 20px;
   height: 100vh;
   /* padding: 20px; */
   /* padding-top: 40px; */
@@ -30,6 +30,8 @@ margin-top: 80px;
 
   
   @media screen and (min-width: 768px) {
+padding-inline: 20px;
+padding: 20px;
   margin-top: 0px;
   }
 `;
@@ -41,6 +43,7 @@ export const HomePart1 = styled.div`
   max-width: 600px; 
   padding-inline: 0px;
 `;
+
 
 export const HomePart2 = styled.div`
   display: flex;

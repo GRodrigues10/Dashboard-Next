@@ -7,6 +7,7 @@ import {
   HomeContent,
   HomePart1,
   HomePart2,
+
   TopCards,
 } from "./Home.styled";
 import CircleGraph from "@/components/circlegraph/CircleGraph";
@@ -19,18 +20,19 @@ import PizzaGraph from "@/components/pizzagraph/PizzaGraph";
 export default function Home() {
   return (
     <HomeContainer>
-      <Menu/>
+      <Menu />
       <HomeContent>
         <HomePart1>
           <Cards>
             <Card title="Receita" price="R$ 12,450" percent="3,2%" />
             <Card title="Despesa" price="R$ 4,560" percent="1,4%" />
           </Cards>
+
           <LineGraph />
 
           <TopCards>
             <TopCard />
-            <PizzaGraph/>
+            <PizzaGraph />
           </TopCards>
         </HomePart1>
 
