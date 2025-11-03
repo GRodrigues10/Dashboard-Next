@@ -29,6 +29,7 @@ p{
     font-size: 1.2rem;
     display: flex;
     gap: 5px;
+    color: red;
 }
 
 `

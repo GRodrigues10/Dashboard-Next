@@ -25,7 +25,7 @@ export default function LineGraph() {
   const legendPaddingBottom = 15; // espaço abaixo
 
   return (
-    <div className="w-full max-w-[600px] h-[300px] bg-[#1E293B] p-4 rounded-lg shadow-lg sm:w-150">
+    <div className="w-full max-w-[530px] h-[300px] bg-[#1E293B] p-4 rounded-lg shadow-lg sm:max-w-[600px]">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={data}

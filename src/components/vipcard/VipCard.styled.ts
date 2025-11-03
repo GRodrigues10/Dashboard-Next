@@ -25,6 +25,8 @@ p{
     display: flex;
     gap: 5px;
     font-size: 1.4rem;
+    color: #94a3b8;
+
 }
 
 `

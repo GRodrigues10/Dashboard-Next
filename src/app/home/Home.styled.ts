@@ -8,7 +8,7 @@ export const HomeContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
-  padding-inline-start: 70px;
+  padding-inline-start: 80px;
 
 
   }
@@ -21,6 +21,7 @@ margin-top: 80px;
   flex-wrap: wrap;
   align-items: center;
 padding-inline: 20px;
+
   height: 100vh;
   /* padding: 20px; */
   /* padding-top: 40px; */
@@ -28,6 +29,9 @@ padding-inline: 20px;
   justify-content: center;
   width: 100%;
 
+  @media screen and (min-width: 530px){
+    padding-inline: 100px;
+  }
   
   @media screen and (min-width: 768px) {
 padding-inline: 20px;
@@ -70,24 +74,25 @@ export const TopCards = styled.div`
   flex-direction: column;
   gap: 20px;
   color: white;
-  max-width: 600px; /* 👈 adicionado */
+  max-width: 600px; 
   padding-inline: 0px;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
   }
 `;
 
 export const Cards = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%;
-  max-width: 600px; /* 👈 adicionado */
+  max-width: 600px;
   padding-inline: 0px;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
+
   }
 `;
 

@@ -16,6 +16,7 @@ import { TopCardContainer } from "@/components/topcard/TopCard.styled";
 import TopCard from "@/components/topcard/TopCard";
 import BarGraph from "@/components/bargraph/BarGraph";
 import PizzaGraph from "@/components/pizzagraph/PizzaGraph";
+import ClientCard from "@/components/clientcard/ClientCard";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
           <Cards>
             <Card title="Receita" price="R$ 12,450" percent="3,2%" />
             <Card title="Despesa" price="R$ 4,560" percent="1,4%" />
+            
           </Cards>
 
           <LineGraph />

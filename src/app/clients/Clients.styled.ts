@@ -24,7 +24,7 @@ flex-direction: row;
   @media screen and (min-width: 768px) {
     padding-top: 20px;
     flex-direction: row;
-  padding-inline-start: 90px;
+  padding-inline-start: 100px;
 
 
   }

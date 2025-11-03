@@ -53,7 +53,9 @@ function Menu() {
         <Link href='/clients'>
           <Users className="h-6 w-6" />
         </Link>
-        <DollarSignIcon className="h-6 w-6" />
+        <Link href='/financial'>
+          <DollarSignIcon className="h-6 w-6" />
+        </Link>
         <Settings className="h-6 w-6" />
       </MenuLinks>
       <LayoutDashboard className="mobile-dashboard-icon" />
@@ -79,10 +81,12 @@ function Menu() {
             <span>Clientes</span>
           </div>
         </Link>
-        <div>
-          <DollarSignIcon className="h-6 w-6" />
-          <span>Receitas</span>
-        </div>
+        <Link href='/financial'>
+          <div>
+            <DollarSignIcon className="h-6 w-6" />
+            <span>Receitas</span>
+          </div>
+        </Link>
         <div>
           <Settings className="h-6 w-6" />
           <span>Configurações</span>
