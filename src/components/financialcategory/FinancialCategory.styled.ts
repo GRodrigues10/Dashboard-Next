@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 320px;
+  /* max-width: 370px; */
+  width: 100%;
   height: 300px;
   background: #1f2937;
   border-radius: 12px;
@@ -11,6 +12,15 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @media screen and (min-width: 768px) {
+    max-width: 600px;
+  }
+
+  @media screen and (min-width: 1200px){
+  max-width: 320px;
+    height: 320px;
+    
+  }
 `;
 
 export const Title = styled.h3`

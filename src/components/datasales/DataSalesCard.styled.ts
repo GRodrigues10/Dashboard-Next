@@ -6,8 +6,20 @@ export const CardContainer = styled.div`
   padding: 20px;
   color: #f8fafc;
   width: 100%;
-  max-width: 960px;
+  /* max-width: 960px; */
   margin: 0 auto;
+  overflow-x: scroll;
+
+  @media screen and (min-width: 768px){
+    max-width: 600px;
+  overflow-x: hidden;
+
+  }
+
+    @media screen and (min-width: 1200px){
+    max-width: 960px;
+
+  }
 `;
 
 export const Table = styled.table`

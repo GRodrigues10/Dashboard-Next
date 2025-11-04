@@ -11,8 +11,8 @@ export const CardContainer = styled.div<CardContainerProps>`
   background-color: #1e293b;
 
 
-  width: ${({ reduced }) => (reduced ? "200px" : "100%")};
-  min-width: ${({ reduced }) => (reduced ? "200px" : "200px")};
+  width: ${({ reduced }) => (reduced ? "100%" : "100%")};
+  min-width: ${({ reduced }) => (reduced ? "100%" : "200px")};
   max-width: ${({ reduced, expanded }) =>
     reduced ? "200px" : expanded ? "400px" : "600px"};
 
@@ -58,13 +58,16 @@ export const CardContainer = styled.div<CardContainerProps>`
   @media screen and (min-width: 768px) {
       max-width: ${({ reduced, expanded }) =>
     reduced ? "200px" : expanded ? "400px" : "290px"};
+    
     h1 { font-size: ${({ reduced }) => (reduced ? "0.95rem" : "1.1rem")}; }
     h2 { font-size: ${({ reduced }) => (reduced ? "1.8rem" : "2rem")}; }
     p { font-size: ${({ reduced }) => (reduced ? "0.9rem" : "1rem")}; }
   }
 
   @media screen and (min-width: 992px) {
-    
+   max-width: 600px;
+  min-width: auto;
+
     h1 { font-size: ${({ reduced }) => (reduced ? "1rem" : "1.2rem")}; }
     h2 { font-size: ${({ reduced }) => (reduced ? "1.9rem" : "2.1rem")}; }
     p { font-size: ${({ reduced }) => (reduced ? "0.95rem" : "1rem")}; }

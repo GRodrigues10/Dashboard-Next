@@ -22,8 +22,8 @@ const data = [
 ];
 
 export default function CashFlowCard() {
-  const legendPaddingTop = 25;
-  const legendPaddingBottom = 15;
+  const legendPaddingTop = 33;
+  const legendPaddingBottom = 25;
 
   return (
     <div
@@ -46,12 +46,12 @@ export default function CashFlowCard() {
         ease-in-out
       "
     >
-      <div className="w-full h-[300px] sm:h-[280px] md:h-[300px]">
+      <div className="w-full h-[300px] sm:h-[280px] md:h-[320px]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={data}
             margin={{
-              top: 70 + legendPaddingBottom,
+              top: 50 + legendPaddingBottom,
               right: 20,
               left: 20,
               bottom: 30,
@@ -100,7 +100,7 @@ export default function CashFlowCard() {
 
             <g>
               <text
-                x="50%"
+                x="15%"
                 y={legendPaddingTop}
                 fill="white"
                 fontSize={18}

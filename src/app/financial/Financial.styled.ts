@@ -14,15 +14,20 @@ export const FinancialContent = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 0 40px;
+  padding: 0 20px;
   min-height: 100vh;
   margin-bottom: 20px;
   width: 100%;
-  padding-inline: 120px;
-
+  /* padding-inline: 120px; */
+@media screen and (min-width:640px) {
+padding-inline: 120px;
+}
   @media screen and (min-width:992px){
   padding-inline: 0px;
 
+  
+  }
+  @media screen and (min-width: 1200px) {
     margin-bottom: 0;
   }
   gap: 20px;
@@ -37,7 +42,7 @@ export const FinancialContentContainer = styled.div`
    width: 100%;
    max-width: 620px;
    @media screen and (min-width:1140px){
-    width: auto;
+    width: 100%;
     max-width: 100%;
    }
 `;
@@ -45,8 +50,11 @@ export const FinancialContentContainer = styled.div`
 export const Balance = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
   width: 100%;
+  /* background-color: red; */
   padding-top: 100px;
 
    @media screen and (min-width: 768px) {
@@ -74,9 +82,9 @@ export const FinancialContentContainer2 = styled.div`
   align-items: center;
   justify-content: center;
 
- 
 
-    @media screen and (min-width: 1140px) {
+
+    @media screen and (min-width: 1200px) {
   flex-direction: row;
   }
 
