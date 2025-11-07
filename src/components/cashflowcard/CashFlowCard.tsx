@@ -14,11 +14,11 @@ import {
 const data = [
   { name: "Jan", Entrada: 4000, Saída: 2400 },
   { name: "Fev", Entrada: 3000, Saída: 1398 },
-  { name: "Mar", Entrada: 2000, Saída: 9800 },
+  { name: "Mar", Entrada: 7000, Saída: 1800 },
   { name: "Abr", Entrada: 2780, Saída: 3908 },
   { name: "Mai", Entrada: 1890, Saída: 4800 },
-  { name: "Jun", Entrada: 2390, Saída: 3800 },
-  { name: "Jul", Entrada: 3490, Saída: 4300 },
+  { name: "Jun", Entrada: 2390, Saída: 2800 },
+  { name: "Jul", Entrada: 3490, Saída: 1300 },
 ];
 
 export default function CashFlowCard() {
@@ -100,7 +100,7 @@ export default function CashFlowCard() {
 
             <g>
               <text
-                x="15%"
+                x="50%"
                 y={legendPaddingTop}
                 fill="white"
                 fontSize={18}

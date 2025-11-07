@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const RegisterContainer = styled.div`
-padding: 20px;
+export const LogInContainer = styled.div`
+  padding: 20px;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -18,15 +18,14 @@ padding: 20px;
     text-align: center;
   }
 
-  @media screen and (min-width: 768px){
-     h1 {
-    font-size: 2.8rem;
-
-     }
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 2.8rem;
+    }
   }
 `;
 
-export const RegisterDisplay = styled.div`
+export const LogInDisplay = styled.div`
   width: 100%;
   max-width: 420px;
   height: 420px;
@@ -103,7 +102,7 @@ export const SubmitButton = styled.button`
   }
 `;
 
-export const RegisterUser = styled.div`
+export const LogInUser = styled.div`
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -123,9 +122,8 @@ export const RegisterUser = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-   span{
-font-size: 1rem;
-   } 
-    
+    span {
+      font-size: 1rem;
+    }
   }
 `;

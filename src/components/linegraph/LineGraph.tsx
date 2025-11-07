@@ -13,11 +13,11 @@ import {
 const data = [
   { name: "Jan", Receita: 4000, Despesa: 2400 },
   { name: "Fev", Receita: 3000, Despesa: 1398 },
-  { name: "Mar", Receita: 2000, Despesa: 9800 },
-  { name: "Abr", Receita: 2780, Despesa: 3908 },
-  { name: "Mai", Receita: 1890, Despesa: 4800 },
+  { name: "Mar", Receita: 9000, Despesa: 1800 },
+  { name: "Abr", Receita: 2780, Despesa: 4908 },
+  { name: "Mai", Receita: 1890, Despesa: 1800 },
   { name: "Jun", Receita: 2390, Despesa: 3800 },
-  { name: "Jul", Receita: 3490, Despesa: 4300 },
+  { name: "Jul", Receita: 6590, Despesa: 4300 },
 ];
 
 export default function LineGraph() {

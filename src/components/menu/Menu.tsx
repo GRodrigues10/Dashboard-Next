@@ -56,7 +56,9 @@ function Menu() {
         <Link href='/financial'>
           <DollarSignIcon className="h-6 w-6" />
         </Link>
-        <Settings className="h-6 w-6" />
+        <Link href='/settings'>
+          <Settings className="h-6 w-6" />
+        </Link>
       </MenuLinks>
       <LayoutDashboard className="mobile-dashboard-icon" />
       {menuMobile ? (
@@ -87,10 +89,12 @@ function Menu() {
             <span>Receitas</span>
           </div>
         </Link>
-        <div>
-          <Settings className="h-6 w-6" />
-          <span>Configurações</span>
-        </div>
+        <Link href='/settings'>
+          <div>
+            <Settings className="h-6 w-6" />
+            <span>Configurações</span>
+          </div>
+        </Link>
 
         <Link href='/'>
           <div className="exit">

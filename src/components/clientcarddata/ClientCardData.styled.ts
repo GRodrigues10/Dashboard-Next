@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ClientCardDataContainer = styled.div`
   display: flex;
-  flex-direction: column;
   width: 100%;
   max-width: 360px;
   background-color: #1e293b;
@@ -13,11 +12,13 @@ export const ClientCardDataContainer = styled.div`
   max-width: 400px;
   max-height: 320px;
   overflow-y: scroll;
+  
 
 
     @media screen and (min-width: 1200px) {
     max-width: 960px;
         flex-direction: row;
+        overflow-y: hidden;
   }
 `;
 
@@ -31,11 +32,11 @@ export const ClientCardDataColumn = styled.div`
   gap: 10px;
 
   &:first-child {
-    border-left: none;
-  }
 
+  }
+ border-left: 2px solid #334155;
   @media screen and (min-width: 1200px) {
-  border-left: 2px solid #334155;
+ 
     
   }
 `;

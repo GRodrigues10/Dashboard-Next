@@ -34,7 +34,20 @@ function ClientCardData() {
 
       <ClientCardDataColumn>
         <ClientCardDataHeader>Status</ClientCardDataHeader>
-        {clients.map((c) => <ClientCardDataItem key={c.name + "_status"}>{c.status}</ClientCardDataItem>)}
+        {clients.map((c) =>  <ClientCardDataItem
+            key={c.name + "_status"}
+            style={{
+              color:
+                c.status === "VIP"
+                  ? "#38bdf8" // azul
+                  : c.status === "Ativo"
+                  ? "#22c55e" // verde
+                  : "#ef4444", // vermelho
+              fontWeight: 600,
+            }}
+          >
+            {c.status}
+          </ClientCardDataItem>)}
       </ClientCardDataColumn>
     </ClientCardDataContainer>
   );
