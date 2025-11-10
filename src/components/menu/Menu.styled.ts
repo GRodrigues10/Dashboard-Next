@@ -6,12 +6,12 @@ export const MenuContainer = styled.aside`
   position: fixed;
   width: 100%;
   height: 80px;
-  background-color: #1e293b;
+  background-color: ${({ theme }) => theme.cardBackground};
   z-index: 999999999;
 
   .mobile-dashboard-icon {
     position: fixed;
-    color: white;
+    color: ${({ theme }) => theme.text};
     height: 80px;
     left: 15px;
     width: 2rem;
@@ -19,50 +19,48 @@ export const MenuContainer = styled.aside`
 
   .menu-icon {
     position: fixed;
-    color: white;
+    color: ${({ theme }) => theme.text};
     height: 80px;
     right: 15px;
     width: 2rem;
     cursor: pointer;
     transition: 0.4s ease;
     &:hover {
-     color: #8c95a3;
+      color: ${({ theme }) => theme.secondary};
     }
   }
 
- @media screen and (min-width: 768px) {
-  width: 80px;
-  min-height: 100vh;
-  background-color: #1e293b;
-  flex-direction: column;
-  align-items: center;
+  @media screen and (min-width: 768px) {
+    width: 80px;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
 
-  position: fixed;
-  left: 0;
-  top: 0;
+    .mobile-dashboard-icon {
+      display: none;
+    }
 
-  .mobile-dashboard-icon {
-    display: none;
+    .menu-icon {
+      display: none;
+    }
   }
-
-  .menu-icon {
-    display: none;
-  }
-}
 `;
 
 export const MenuLinks = styled.div`
   display: flex;
-  flex-direction: row; /* horizontal em mobile */
+  flex-direction: row;
   align-items: center;
 
   svg {
     display: none;
-    color: #a0a8b8;
+    color: ${({ theme }) => theme.text};
     cursor: pointer;
     transition: 0.4s;
     &:hover {
-      color: #8c95a3;
+      color: ${({ theme }) => theme.secondary};
     }
   }
 
@@ -70,7 +68,7 @@ export const MenuLinks = styled.div`
     svg {
       display: flex;
     }
-    flex-direction: column; /* vertical em desktop */
+    flex-direction: column;
     padding-top: 50px;
   }
 `;
@@ -80,17 +78,15 @@ export const MenuLinksMobile = styled.div`
   min-height: 100vh;
   position: fixed;
   top: 0;
-  right: 0; /* 🔹 lado direito */
-  display: flex; /* sempre flex */
+  right: 0;
+  display: flex;
   flex-direction: column;
   gap: 40px;
-  color: white;
+  color: ${({ theme }) => theme.text};
   padding: 20px;
   padding-top: 80px;
-  background-color: #192433;
+  background-color: ${({ theme }) => theme.cardBackground};
   z-index: 99999;
-
-  /* inicia fora da tela e desliza para dentro */
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 
@@ -99,15 +95,15 @@ export const MenuLinksMobile = styled.div`
     gap: 10px;
 
     svg {
-      color: #a0a8b8;
+      color: ${({ theme }) => theme.text};
     }
 
     span {
-      color: white;
+      color: ${({ theme }) => theme.text};
       cursor: pointer;
       transition: 0.4s ease;
       &:hover {
-        color: #a0a8b8;
+        color: ${({ theme }) => theme.secondary};
       }
     }
   }
@@ -131,7 +127,6 @@ export const MenuLinksMobile = styled.div`
   }
 `;
 
-
 export const MenuExit = styled.div`
   display: none;
 
@@ -139,10 +134,9 @@ export const MenuExit = styled.div`
     display: flex;
     margin-top: auto;
     padding: 20px;
- 
+
     svg {
       color: red;
-
       &:hover {
         color: darkred;
       }

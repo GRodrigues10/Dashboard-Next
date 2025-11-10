@@ -4,17 +4,18 @@ export const TopCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-
   height: 210px;
-  background-color: #1e293b;
+  background-color: ${({ theme }) => theme.cardBackground};
   border-radius: 5px;
   gap: 20px;
-  color: white;
+  color: ${({ theme }) => theme.text};
   padding: 20px;
+  box-shadow: ${({ theme }) => theme.shadow};
 
   h2 {
     font-size: 1rem;
     text-align: center;
+    color: ${({ theme }) => theme.text};
   }
 
   @media screen and (min-width: 768px) {
@@ -49,6 +50,7 @@ export const TopCardText = styled.div`
 
   p {
     font-size: 1rem;
+    color: ${({ theme }) => theme.text};
   }
 
   @media screen and (min-width: 992px) {

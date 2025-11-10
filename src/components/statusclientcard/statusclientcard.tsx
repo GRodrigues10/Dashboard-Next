@@ -1,12 +1,62 @@
+"use client";
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Label } from "recharts";
+import styled from "styled-components";
 
 const data = [
   { name: "Ativos", value: 70 },
   { name: "Inativos", value: 30 },
 ];
 
-const COLORS = ["#3B82F6", "#F97316"]; // azul e laranja
+const COLORS = ["#3B82F6", "#F97316"]; 
+
+const StatusClientCardContainer = styled.div`
+  width: 100%;
+  max-width: 400px;
+  background-color: ${({ theme }) =>
+    theme.background === "light" ? "#ffffff" : theme.cardBackground};
+  border-radius: 12px;
+  padding: 20px;
+  color: ${({ theme }) => theme.text};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: ${({ theme }) =>
+    theme.background === "light"
+      ? "0 8px 25px rgba(0, 0, 0, 0.15)"
+      : theme.shadow};
+  transition: all 0.3s ease;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    color: ${({ theme }) => theme.text};
+  }
+
+  .legend {
+    margin-top: 10px;
+    display: flex;
+    gap: 16px;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      span {
+        font-size: 0.9rem;
+        color: ${({ theme }) => theme.text};
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+    }
+  }
+`;
 
 export const StatusClientCard = () => {
   const total = data.reduce((sum, item) => sum + item.value, 0);
@@ -14,22 +64,8 @@ export const StatusClientCard = () => {
   const percentualAtivos = ((ativos / total) * 100).toFixed(0);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        maxWidth: 400,
-        backgroundColor: "#1E293B",
-        borderRadius: 12,
-        padding: 20,
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <h3 style={{ textAlign: "center", marginBottom: 0, fontSize: "20px" }}>
-        Status de Clientes
-      </h3>
+    <StatusClientCardContainer>
+      <h3>Status de Clientes</h3>
 
       <div style={{ width: "100%", height: 282 }}>
         <ResponsiveContainer>
@@ -45,13 +81,8 @@ export const StatusClientCard = () => {
               paddingAngle={0}
             >
               {data.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={COLORS[index % COLORS.length]}
-                />
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
-
-              {/* 👇 Número central */}
               <Label
                 value={`${percentualAtivos}%`}
                 position="center"
@@ -63,24 +94,17 @@ export const StatusClientCard = () => {
         </ResponsiveContainer>
       </div>
 
-      <div style={{ marginTop: 10, display: "flex", gap: 16 }}>
+      <div className="legend">
         {data.map((item, index) => (
-          <div
-            key={item.name}
-            style={{ display: "flex", alignItems: "center", gap: 6 }}
-          >
+          <div key={item.name}>
             <div
-              style={{
-                width: 12,
-                height: 12,
-                borderRadius: "50%",
-                backgroundColor: COLORS[index],
-              }}
+              className="dot"
+              style={{ backgroundColor: COLORS[index] }}
             ></div>
-            <span style={{ fontSize: 14 }}>{item.name}</span>
+            <span>{item.name}</span>
           </div>
         ))}
       </div>
-    </div>
+    </StatusClientCardContainer>
   );
 };

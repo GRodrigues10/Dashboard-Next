@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface InputFieldProps {
+  $error?: boolean;
+}
 
 export const LogInContainer = styled.div`
   padding: 20px;
@@ -32,17 +36,15 @@ export const LogInDisplay = styled.div`
   background-color: #1e293b;
   border-radius: 10px;
   display: flex;
-  flex-direction: column; /* empilha os inputs */
-  align-items: stretch; /* faz os filhos ocuparem toda a largura */
+  flex-direction: column;
+  align-items: stretch;
   justify-content: center;
   padding: 40px;
-  gap: 20px; /* espaço entre inputs e botão */
+  gap: 20px;
 
   h2 {
     font-size: 2.3rem;
     color: white;
-    /* position: relative;
-    bottom: 30px; */
     font-weight: 600;
     text-align: center;
     margin-bottom: 30px;
@@ -50,10 +52,11 @@ export const LogInDisplay = styled.div`
   }
 `;
 
-export const InputField = styled.div`
+export const InputField = styled.div<InputFieldProps>`
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 
   label {
     color: #f8fafc;
@@ -69,15 +72,30 @@ export const InputField = styled.div`
     border-radius: 6px;
     border: 1px solid #273449;
     font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 
     &:focus {
       outline: none;
       border-color: #38bdf8;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
     }
 
     &::placeholder {
       color: #94a3b8;
+      transition: color 0.2s ease;
     }
+
+    /* Se tiver erro, muda borda e placeholder pra vermelho */
+    ${({ $error }) =>
+      $error &&
+      css`
+        border-color: #ef4444 !important;
+        box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+
+        &::placeholder {
+          color: #f87171; /* vermelho suave */
+        }
+      `}
   }
 `;
 
@@ -112,15 +130,16 @@ export const LogInUser = styled.div`
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
-
     color: white;
     cursor: pointer;
     text-align: center;
     transition: 0.4s ease;
+
     &:hover {
       color: #60a5fa;
     }
   }
+
   @media screen and (min-width: 768px) {
     span {
       font-size: 1rem;

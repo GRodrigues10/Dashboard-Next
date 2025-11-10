@@ -1,25 +1,29 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  /* max-width: 370px; */
   width: 100%;
   height: 300px;
-  background: #1f2937;
+  background-color: ${({ theme }) =>
+    theme.background === "light" ? "#FFFFFF" : theme.cardBackground}; // branco no light
+  box-shadow: ${({ theme }) =>
+    theme.background === "light"
+      ? "0 8px 25px rgba(0, 0, 0, 0.15)" // sombra preta no light
+      : theme.shadow};
   border-radius: 12px;
   padding: 20px;
-  color: white;
+  color: ${({ theme }) => theme.text};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
   @media screen and (min-width: 768px) {
     max-width: 600px;
   }
 
-  @media screen and (min-width: 1200px){
-  max-width: 320px;
+  @media screen and (min-width: 1200px) {
+    max-width: 320px;
     height: 320px;
-    
   }
 `;
 
@@ -28,6 +32,7 @@ export const Title = styled.h3`
   margin-bottom: 16px;
   font-size: 1.3rem;
   text-align: center;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const ChartContainer = styled.div`

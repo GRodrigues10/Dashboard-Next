@@ -1,95 +1,77 @@
 "use client";
-
-import {
-  SelectContainer,
-  SelectInput,
-  SelectInput2,
-  SettingsContainer,
-  SettingsContainerPart1,
-  SettingsContainerPart2,
-  SettingsContainerPart3,
-  SettingsContent,
-  SettingsPart1,
-  SettingsPart2,
-  ThemeContainer,
-  ThemeContent,
-  ThemeInput,
-  ThemeInput2,
-} from "./Settings.styled";
+import React from "react";
 import Menu from "@/components/menu/Menu";
+import { Sun, Moon, Globe, MessageSquare } from "lucide-react";
+import {
+  SettingsContainer,
+  TopRow,
+  ThemeBlock,
+  Options,
+  LanguageBlock,
+  FeedbackBlock,
+  SettingsContent,
+} from "./Settings.styled";
+import { useTheme } from "@/context/Context";
 
-function page() {
+
+export default function SettingsPage() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <SettingsContainer>
       <Menu />
       <SettingsContent>
-        <SettingsContainerPart1>
-          <h1>Configurações</h1>
-        </SettingsContainerPart1>
+        <h1>Configurações</h1>
 
-        <SettingsContainerPart2>
+        <TopRow>
+          <ThemeBlock>
+            <h2>
+              <Sun size={18} style={{ marginRight: 6 }} /> Tema
+            </h2>
+            <Options>
+              <label>
+                <input
+                  type="radio"
+                  name="theme"
+                  value="light"
+                  checked={theme === "light"}
+                  onChange={() => toggleTheme("light")}
+                />
+                Claro
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="theme"
+                  value="dark"
+                  checked={theme === "dark"}
+                  onChange={() => toggleTheme("dark")}
+                />
+                Escuro
+              </label>
+            </Options>
+          </ThemeBlock>
 
-          <SettingsPart1>
-            <ThemeContainer>
-              <h2><strong>Tema</strong></h2>
-              <ThemeContent>
-                <ThemeInput>
-                  
-                  <input type="radio" />
-                  <label>Claro</label>
-                </ThemeInput>
-                <ThemeInput2>
-              
-                  <input type="radio" />
-                      <label>Escuro</label>
-                </ThemeInput2>
-          
-              </ThemeContent>
-            </ThemeContainer>
-                <SelectContainer>
-                  <h2><strong>Tempo</strong></h2>
-                    <SelectInput>
-                      <p>Formato de hora</p>
-                      <select>
-                        <option>24 horas</option>
-                      </select>
-                    </SelectInput>
-                    <SelectInput2>
-                      <p>Formato de data</p>
-                      <select>
-                        <option>DD/MM/YYYY</option>
-                      </select>
-                    </SelectInput2>
-                </SelectContainer>
-          </SettingsPart1>
+          <LanguageBlock>
+            <h2>
+              <Globe size={18} style={{ marginRight: 6 }} /> Idioma
+            </h2>
+            <select>
+              <option>Português</option>
+              <option>Inglês</option>
+              <option>Espanhol</option>
+            </select>
+          </LanguageBlock>
+        </TopRow>
 
-          <SettingsPart2>
-              <div>
-                <h2>Idioma</h2>
-                <select>
-                  <option>
-                    Português
-                  </option>
-                </select>
-              </div>
-              <div>
-                     <h2>Feedback</h2>
-               <select>
-                  <option>
-                    Enviar Sugestão
-                  </option>
-                </select>
-              </div>
-          </SettingsPart2>
-
-        </SettingsContainerPart2>
-        <SettingsContainerPart3>
-          <textarea placeholder="Relate o problema ou sugestão..."></textarea>
-          <button>Enviar</button>
-          </SettingsContainerPart3>
+        <FeedbackBlock>
+          <h2>
+            <MessageSquare size={18} style={{ marginRight: 6 }} /> Feedback
+          </h2>
+          <textarea placeholder="Conte-nos o que achou da aplicação..." />
+          <button>Enviar Feedback</button>
+        </FeedbackBlock>
       </SettingsContent>
     </SettingsContainer>
   );
 }
-
-export default page;

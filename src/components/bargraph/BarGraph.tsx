@@ -1,5 +1,6 @@
 "use client";
 
+import styled from "styled-components";
 import {
   BarChart,
   Bar,
@@ -20,30 +21,49 @@ const data = [
   { name: "Jul", Vendas: 3490, Lucro: 4300 },
 ];
 
+const ChartContainer = styled.div`
+  width: 100%;
+  max-width: 600px;
+  height: 360px;
+  background-color: ${({ theme }) => theme.cardBackground};
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: ${({ theme }) => theme.shadow};
+  transition: all 0.3s ease;
+`;
+
 export default function BarGraph() {
-  const legendPaddingTop = 20; // espaçamento do topo
+  const legendPaddingTop = 20;
 
   return (
-    <div className="w-full max-w-[600px] h-[360px] bg-[#1E293B] p-4 rounded-lg shadow-lg">
+    <ChartContainer>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
-          margin={{ top: 70, right: 30, left: 20, bottom: 20 }} // aumentei o top pra dar espaço
+          margin={{ top: 70, right: 30, left: 20, bottom: 20 }}
         >
-          <CartesianGrid stroke="#334155" strokeDasharray="5 5" />
+          <CartesianGrid
+            stroke="#334155"
+            strokeDasharray="5 5"
+            strokeOpacity={0.5}
+          />
           <XAxis dataKey="name" stroke="#94A3B8" />
           <YAxis stroke="#94A3B8" />
           <Tooltip
-            contentStyle={{ backgroundColor: "#0F172A", border: "none" }}
+            contentStyle={{
+              backgroundColor: "#0F172A",
+              border: "none",
+              borderRadius: "8px",
+              color: "#F8FAFC",
+            }}
             labelStyle={{ color: "#F8FAFC" }}
           />
 
           <Bar dataKey="Vendas" fill="#38BDF8" radius={[6, 6, 0, 0]} />
           <Bar dataKey="Lucro" fill="#F97316" radius={[6, 6, 0, 0]} />
 
-          {/* Legenda interna com padding */}
+          {/* Legenda */}
           <g>
-            {/* Retângulo Receita */}
             <rect
               x={20}
               y={legendPaddingTop}
@@ -53,8 +73,8 @@ export default function BarGraph() {
               rx={4}
             />
             <text
-              x={20 + 40} // centro horizontal (x + width / 2)
-              y={legendPaddingTop + 10} // centro vertical (y + height / 2)
+              x={20 + 40}
+              y={legendPaddingTop + 10}
               fill="#0F172A"
               fontSize={12}
               fontWeight="bold"
@@ -64,7 +84,6 @@ export default function BarGraph() {
               Vendas
             </text>
 
-            {/* Retângulo Despesa */}
             <rect
               x={120}
               y={legendPaddingTop}
@@ -87,6 +106,6 @@ export default function BarGraph() {
           </g>
         </BarChart>
       </ResponsiveContainer>
-    </div>
+    </ChartContainer>
   );
 }

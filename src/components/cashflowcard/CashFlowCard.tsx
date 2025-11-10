@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from "styled-components";
 import {
   LineChart,
   Line,
@@ -22,8 +23,22 @@ const data = [
 ];
 
 export default function CashFlowCard() {
+  const theme = useTheme();
   const legendPaddingTop = 33;
   const legendPaddingBottom = 25;
+
+  // Cor do card conforme tema
+  const cardColor =
+    theme.background === "light" ? "#ffffff" : theme.cardBackground;
+
+  // Sombra do card
+  const cardShadow =
+    theme.background === "light"
+      ? "0 8px 25px rgba(0,0,0,0.15)"
+      : theme.shadow;
+
+  // Cor do texto "Fluxo de Caixa"
+  const titleColor = theme.background === "light" ? "#000000" : "#38BDF8";
 
   return (
     <div
@@ -33,10 +48,8 @@ export default function CashFlowCard() {
         sm:max-w-[500px] 
         md:max-w-[600px] 
         xl:max-w-[620px]
-        bg-[#1E293B] 
         p-4 
         rounded-xl 
-        shadow-lg 
         flex 
         flex-col 
         justify-between
@@ -45,6 +58,7 @@ export default function CashFlowCard() {
         duration-300 
         ease-in-out
       "
+      style={{ backgroundColor: cardColor, boxShadow: cardShadow }}
     >
       <div className="w-full h-[300px] sm:h-[280px] md:h-[320px]">
         <ResponsiveContainer width="100%" height="100%">
@@ -72,13 +86,6 @@ export default function CashFlowCard() {
                 color: "#F8FAFC",
                 fontSize: 13,
               }}
-              formatter={(value) =>
-                value === "Entrada"
-                  ? "Entrada"
-                  : value === "Saída"
-                  ? "Saída"
-                  : value
-              }
             />
 
             <Line
@@ -98,19 +105,18 @@ export default function CashFlowCard() {
               activeDot={{ r: 7 }}
             />
 
-            <g>
-              <text
-                x="50%"
-                y={legendPaddingTop}
-                fill="white"
-                fontSize={18}
-                fontWeight="normal"
-                textAnchor="middle"
-                dominantBaseline="middle"
-              >
-                Fluxo de Caixa
-              </text>
-            </g>
+            {/* Texto central */}
+            <text
+              x="50%"
+              y={legendPaddingTop}
+              fill={titleColor}
+              fontSize={18}
+              fontWeight="normal"
+              textAnchor="middle"
+              dominantBaseline="middle"
+            >
+              Fluxo de Caixa
+            </text>
           </LineChart>
         </ResponsiveContainer>
       </div>
