@@ -13,7 +13,7 @@ export const ClientCardDataContainer = styled.div`
       ? "0 8px 25px rgba(0, 0, 0, 0.15)"
       : theme.shadow};
   height: 100%;
-  max-height: 320px;
+  min-height: 320px;
   overflow-y: scroll;
   transition: all 0.3s ease;
 

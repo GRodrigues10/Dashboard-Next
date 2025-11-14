@@ -12,6 +12,7 @@ export const LogInContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+   background-color: #0F172A;
 
   h1 {
     font-size: 2.3rem;

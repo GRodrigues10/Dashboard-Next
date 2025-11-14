@@ -19,7 +19,7 @@ export const CardContainer = styled.div<CardContainerProps>`
   flex-shrink: 0;
 
   height: ${({ expanded, reduced }) =>
-    expanded ? "240px" : reduced ? "140px" : "160px"};
+    expanded ? "240px" : reduced ? "140px" : "170px"};
 
   border-radius: 10px;
   padding: 20px;

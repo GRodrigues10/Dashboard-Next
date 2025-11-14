@@ -4,7 +4,7 @@ import { CardContainer } from "./Card.styled";
 
 export interface CardContent {
   title: string;
-  price: string;
+  price: number;
   percent: string;
   expanded?: boolean;
   reduced?: boolean;
@@ -17,11 +17,15 @@ const Card: React.FC<CardContent> = ({
   expanded = false,
   reduced = false,
 }) => {
+  // Se não houver valor ou percent, mantém o Card vazio
+  if (!price || !percent) return <CardContainer expanded={expanded} reduced={reduced} />;
+
   const numericPercent = parseFloat(percent.replace(",", "."));
   const isPositive = numericPercent >= 2;
 
   // lógica de altura: reduced > expanded > normal
   const showDetails = expanded; // só mostra detalhes se expanded
+
   return (
     <CardContainer expanded={expanded} reduced={reduced}>
       <div>

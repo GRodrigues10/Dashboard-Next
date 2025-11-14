@@ -1,22 +1,40 @@
-import { TopCardContainer, TopCardContent, TopCardText } from "./TopCard.styled";
+import { useEffect, useState } from "react";
+import {
+  TopCardContainer,
+  TopCardContent,
+  TopCardText,
+} from "./TopCard.styled";
+import { fetchSales } from "@/api/api";
+import { formatPrice } from "@/utils/formatprice";
+import { SalesTypes } from "@/utils/types";
 
 function TopCard() {
+  const [products, setProducts] = useState<SalesTypes[]>([]);
+  const fetchData = async () => {
+    const data: SalesTypes[] = await fetchSales();
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const topProducts = products.filter((p) => p.rate > 8).slice(0, 4);
+
   return (
     <TopCardContainer>
       <h2>Produtos em Alta</h2>
       <TopCardContent>
         <TopCardText>
-          <p>Xbox Series X</p>
-          <p>PlayStation 5</p>
-          <p>Bicicleta Trek</p>
-          <p>Apple Watch</p>
+          {topProducts.map((p) => (
+            <p key={p.id}>{p.product}</p>
+          ))}
         </TopCardText>
 
         <TopCardText>
-          <p>R$ 5,400</p>
-          <p>R$ 5,100</p>
-          <p>R$ 3,200</p>
-          <p>R$ 1,750</p>
+          {topProducts.map((p) => (
+            <p key={p.id}>{formatPrice(p.price)}</p>
+          ))}
         </TopCardText>
       </TopCardContent>
     </TopCardContainer>

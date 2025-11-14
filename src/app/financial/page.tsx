@@ -64,7 +64,7 @@ function Page() {
 
         <FinancialContentContainer3>
       
-<DataSalesCard transactions={transactions} />
+<DataSalesCard />
         </FinancialContentContainer3>
       </FinancialContent>
     </FinancialContainer>

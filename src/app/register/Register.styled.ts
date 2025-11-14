@@ -4,7 +4,7 @@ export const RegisterContainer = styled.div`
   padding: 20px;
   width: 100%;
   min-height: 100vh;
-  /* background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); */
+ background-color: #0F172A;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,15 +1,17 @@
-import React from 'react'
-import { CircleGraphContainer } from './CircleGraph.styled'
+import React from 'react';
+import { CircleGraphContainer } from './CircleGraph.styled';
 
-function CircleGraph() {
-  return (
-    <CircleGraphContainer>
-        <div className="radius">
-          <h2>100%</h2>
-        </div>
-        <p>Lucro Total</p>
-    </CircleGraphContainer>
-  )
+interface CircleGraphProps {
+  percent: number; // ex: 71
 }
 
-export default CircleGraph
+export default function CircleGraph({ percent }: CircleGraphProps) {
+  return (
+    <CircleGraphContainer>
+      <div className="circle" style={{ '--percent': percent } as React.CSSProperties}>
+        <h2>{percent}%</h2>
+      </div>
+      <p>Lucro Total</p>
+    </CircleGraphContainer>
+  );
+}

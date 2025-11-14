@@ -1,6 +1,6 @@
 "use client";
 
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import {
   BarChart,
   Bar,
@@ -9,101 +9,101 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
-
-const data = [
-  { name: "Jan", Vendas: 4000, Lucro: 2400 },
-  { name: "Fev", Vendas: 3000, Lucro: 1398 },
-  { name: "Mar", Vendas: 2000, Lucro: 980 },
-  { name: "Abr", Vendas: 2780, Lucro: 1908 },
-  { name: "Mai", Vendas: 1890, Lucro: 4800 },
-  { name: "Jun", Vendas: 2390, Lucro: 3800 },
-  { name: "Jul", Vendas: 3490, Lucro: 4300 },
-];
+import { useEffect, useState } from "react";
 
 const ChartContainer = styled.div`
   width: 100%;
   max-width: 600px;
-  height: 360px;
+  height: 363px;
   background-color: ${({ theme }) => theme.cardBackground};
-  padding: 1rem;
-  border-radius: 10px;
+  padding: 0.5rem;
+  border-radius: 12px;
   box-shadow: ${({ theme }) => theme.shadow};
-  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 `;
 
 export default function BarGraph() {
-  const legendPaddingTop = 20;
+  const theme = useTheme();
+  const [data, setData] = useState<
+    { name: string; Vendas: number; Lucro: number }[]
+  >([]);
+
+  useEffect(() => {
+    // 🔹 Dados simulados (coerentes com seu dashboard)
+    const mockData = [
+      { name: "Jan", Vendas: 9000, Lucro: 4200 },
+      { name: "Fev", Vendas: 7500, Lucro: 3800 },
+      { name: "Mar", Vendas: 18000, Lucro: 9100 },
+      { name: "Abr", Vendas: 13500, Lucro: 7200 },
+      { name: "Mai", Vendas: 5000, Lucro: 2000 },
+      { name: "Jun", Vendas: 7200, Lucro: 3400 },
+      { name: "Jul", Vendas: 15000, Lucro: 7200 },
+    ];
+
+    setData(mockData);
+  }, []);
 
   return (
     <ChartContainer>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
-          margin={{ top: 70, right: 30, left: 20, bottom: 20 }}
+          margin={{ top: 20, right: 20, left: 0, bottom: 10 }}
         >
           <CartesianGrid
             stroke="#334155"
-            strokeDasharray="5 5"
-            strokeOpacity={0.5}
+            strokeDasharray="4 4"
+            strokeOpacity={0.4}
           />
-          <XAxis dataKey="name" stroke="#94A3B8" />
-          <YAxis stroke="#94A3B8" />
+          <XAxis
+            dataKey="name"
+            stroke={theme.text}
+            tick={{ fontSize: 12 }}
+            axisLine={false}
+          />
+          <YAxis
+            stroke={theme.text}
+            tick={{ fontSize: 12 }}
+            axisLine={false}
+            tickLine={false}
+          />
           <Tooltip
+            formatter={(value: number) => `R$ ${value.toLocaleString()}`}
             contentStyle={{
-              backgroundColor: "#0F172A",
+              backgroundColor: theme.background,
               border: "none",
               borderRadius: "8px",
-              color: "#F8FAFC",
+              color: theme.text,
             }}
-            labelStyle={{ color: "#F8FAFC" }}
+            labelStyle={{ color: theme.text }}
           />
-
-          <Bar dataKey="Vendas" fill="#38BDF8" radius={[6, 6, 0, 0]} />
-          <Bar dataKey="Lucro" fill="#F97316" radius={[6, 6, 0, 0]} />
-
-          {/* Legenda */}
-          <g>
-            <rect
-              x={20}
-              y={legendPaddingTop}
-              width={80}
-              height={20}
-              fill="#38BDF8"
-              rx={4}
-            />
-            <text
-              x={20 + 40}
-              y={legendPaddingTop + 10}
-              fill="#0F172A"
-              fontSize={12}
-              fontWeight="bold"
-              textAnchor="middle"
-              dominantBaseline="middle"
-            >
-              Vendas
-            </text>
-
-            <rect
-              x={120}
-              y={legendPaddingTop}
-              width={80}
-              height={20}
-              fill="#F97316"
-              rx={4}
-            />
-            <text
-              x={120 + 40}
-              y={legendPaddingTop + 10}
-              fill="#0F172A"
-              fontSize={12}
-              fontWeight="bold"
-              textAnchor="middle"
-              dominantBaseline="middle"
-            >
-              Lucro
-            </text>
-          </g>
+          <Legend
+            verticalAlign="top"
+            align="left"
+            wrapperStyle={{
+              paddingBottom: "30px",
+              fontSize: "14px",
+              color: theme.text,
+              right: 0,
+              left: "auto",
+            }}
+          />
+          <Bar
+            dataKey="Vendas"
+            fill="#38BDF8"
+            radius={[6, 6, 0, 0]}
+            barSize={15}
+          />
+          <Bar
+            dataKey="Lucro"
+            fill="#F97316"
+            radius={[6, 6, 0, 0]}
+            barSize={15}
+          />
         </BarChart>
       </ResponsiveContainer>
     </ChartContainer>

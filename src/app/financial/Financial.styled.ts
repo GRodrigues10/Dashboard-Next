@@ -24,6 +24,8 @@ padding-inline: 120px;
 }
   @media screen and (min-width:992px){
   padding-inline: 0px;
+      padding-top: 10px;
+padding-bottom: 10px;
 
   
   }

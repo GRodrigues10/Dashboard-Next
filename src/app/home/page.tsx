@@ -7,28 +7,43 @@ import {
   HomeContent,
   HomePart1,
   HomePart2,
-
   TopCards,
 } from "./Home.styled";
 import CircleGraph from "@/components/circlegraph/CircleGraph";
 import LineGraph from "@/components/linegraph/LineGraph";
-import { TopCardContainer } from "@/components/topcard/TopCard.styled";
 import TopCard from "@/components/topcard/TopCard";
 import BarGraph from "@/components/bargraph/BarGraph";
 import PizzaGraph from "@/components/pizzagraph/PizzaGraph";
-import ClientCard from "@/components/clientcard/ClientCard";
+import { SalesTypes, ExpensesTypes } from "@/utils/types";
+import { useEffect, useState } from "react";
+import { fetchSales, fetchExpenses } from "@/api/api";
+import { formatPrice } from "@/utils/formatprice";
 
 export default function Home() {
+
+
   return (
     <HomeContainer>
       <Menu />
       <HomeContent>
         <HomePart1>
-          <Cards>
-            <Card title="Receita" price="R$ 12,450" percent="3,2%" />
-            <Card title="Despesa" price="R$ 4,560" percent="1,4%" />
-            
-          </Cards>
+          {/* <Cards>
+         <Cards> */}
+<Cards>
+  <Card
+    title="Receita Total"
+    price={formatPrice(56600)}
+    percent="3,2%" 
+  />
+   <Card
+    title="Despesa Total"
+    price={formatPrice(26600)}
+    percent="1,4%" 
+  />
+</Cards>
+
+{/* </Cards>
+          </Cards> */}
 
           <LineGraph />
 
@@ -39,7 +54,7 @@ export default function Home() {
         </HomePart1>
 
         <HomePart2>
-          <CircleGraph />
+          <CircleGraph percent={78.6}/>
           <BarGraph />
         </HomePart2>
       </HomeContent>

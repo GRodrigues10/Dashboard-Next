@@ -20,10 +20,12 @@ import {
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useTheme } from "@/context/Context";
+
 
 function Menu() {
   const [menuMobile, setMenuMobile] = useState(false);
-
+  const {theme} = useTheme();
   const menuMobileControls = () => {
     setMenuMobile(!menuMobile);
   };
@@ -43,9 +45,12 @@ function Menu() {
   return (
     <MenuContainer>
       <MenuLinks className="flex w-full items-center gap-16 flex-col">
-        <LayoutDashboard
+       <LayoutDashboard
           className="h-8 w-8"
-          style={{ color: "white", cursor: "default" }}
+          style={{
+            color: theme === "light" ? "#0f172a" : "white", // 🔹 muda só o ícone conforme tema
+            cursor: "default",
+          }}
         />
         <Link href='/home'>
           <Home className="h-6 w-6" />
