@@ -2,13 +2,10 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Label } from "recharts";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+import "@/i18n";
 
-const data = [
-  { name: "Ativos", value: 70 },
-  { name: "Inativos", value: 30 },
-];
-
-const COLORS = ["#3B82F6", "#F97316"]; 
+const COLORS = ["#3B82F6", "#F97316"];
 
 const StatusClientCardContainer = styled.div`
   width: 100%;
@@ -59,13 +56,20 @@ const StatusClientCardContainer = styled.div`
 `;
 
 export const StatusClientCard = () => {
+  const { t } = useTranslation();
+
+  const data = [
+    { name: t("active"), value: 70 },
+    { name: t("inactive"), value: 30 },
+  ];
+
   const total = data.reduce((sum, item) => sum + item.value, 0);
-  const ativos = data.find((d) => d.name === "Ativos")?.value || 0;
+  const ativos = data[0].value;
   const percentualAtivos = ((ativos / total) * 100).toFixed(0);
 
   return (
     <StatusClientCardContainer>
-      <h3>Status de Clientes</h3>
+      <h3>{t("customersStatus")}</h3>
 
       <div style={{ width: "100%", height: 282 }}>
         <ResponsiveContainer>

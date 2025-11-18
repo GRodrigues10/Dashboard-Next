@@ -1,6 +1,8 @@
 "use client";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { CardContainer } from "./Card.styled";
+import '@/i18n'; // importa i18n no client
+import { useTranslation } from "react-i18next";
 
 export interface CardContent {
   title: string;
@@ -25,7 +27,7 @@ const Card: React.FC<CardContent> = ({
 
   // lógica de altura: reduced > expanded > normal
   const showDetails = expanded; // só mostra detalhes se expanded
-
+  const { t } = useTranslation();
   return (
     <CardContainer expanded={expanded} reduced={reduced}>
       <div>

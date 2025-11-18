@@ -12,6 +12,8 @@ import {
   Legend,
 } from "recharts";
 import { useEffect, useState } from "react";
+import "@/i18n";
+import { useTranslation } from "react-i18next";
 
 const ChartContainer = styled.div`
   width: 100%;
@@ -28,12 +30,13 @@ const ChartContainer = styled.div`
 
 export default function BarGraph() {
   const theme = useTheme();
+  const { t } = useTranslation();
+
   const [data, setData] = useState<
     { name: string; Vendas: number; Lucro: number }[]
   >([]);
 
   useEffect(() => {
-    // 🔹 Dados simulados (coerentes com seu dashboard)
     const mockData = [
       { name: "Jan", Vendas: 9000, Lucro: 4200 },
       { name: "Fev", Vendas: 7500, Lucro: 3800 },
@@ -59,18 +62,21 @@ export default function BarGraph() {
             strokeDasharray="4 4"
             strokeOpacity={0.4}
           />
+
           <XAxis
             dataKey="name"
             stroke={theme.text}
             tick={{ fontSize: 12 }}
             axisLine={false}
           />
+
           <YAxis
             stroke={theme.text}
             tick={{ fontSize: 12 }}
             axisLine={false}
             tickLine={false}
           />
+
           <Tooltip
             formatter={(value: number) => `R$ ${value.toLocaleString()}`}
             contentStyle={{
@@ -81,6 +87,8 @@ export default function BarGraph() {
             }}
             labelStyle={{ color: theme.text }}
           />
+
+          {/* 🔥 LEGENDA TRADUZIDA AQUI */}
           <Legend
             verticalAlign="top"
             align="left"
@@ -91,15 +99,25 @@ export default function BarGraph() {
               right: 0,
               left: "auto",
             }}
+            formatter={(value) => {
+              if (value === "Vendas") return t("sales");
+              if (value === "Lucro") return t("profit");
+              return value;
+            }}
           />
+
+          {/* 🔥 AS BARRAS MANTÊM A CHAVE REAL */}
           <Bar
             dataKey="Vendas"
+            name={t("sales")}
             fill="#38BDF8"
             radius={[6, 6, 0, 0]}
             barSize={15}
           />
+
           <Bar
             dataKey="Lucro"
+            name={t("profit")}
             fill="#F97316"
             radius={[6, 6, 0, 0]}
             barSize={15}

@@ -1,10 +1,12 @@
 export interface SalesTypes {
   id: number;
   date: string;
+  user?:string,
   product: string;
   price: number;
   rate: number;
-  category: string;
+  month:string
+  category: any;
   sold:number
 }
 

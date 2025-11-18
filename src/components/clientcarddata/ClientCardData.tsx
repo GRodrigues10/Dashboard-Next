@@ -5,8 +5,12 @@ import {
   ClientCardDataHeader,
   ClientCardDataItem,
 } from "./ClientCardData.styled";
+import "@/i18n";
+import { useTranslation } from "react-i18next";
 
 function ClientCardData() {
+ 
+ const { t } = useTranslation();
   const clients = [
     { name: "Ana", email: "Ana@gmail.com", sales: 32, status: "VIP" },
     { name: "Alex", email: "Alex@gmail.com", sales: 25, status: "Ativo" },
@@ -18,22 +22,22 @@ function ClientCardData() {
   return (
     <ClientCardDataContainer>
       <ClientCardDataColumn>
-        <ClientCardDataHeader>Nome</ClientCardDataHeader>
+        <ClientCardDataHeader>{t('name')}</ClientCardDataHeader>
         {clients.map((c) => <ClientCardDataItem key={c.name}>{c.name}</ClientCardDataItem>)}
       </ClientCardDataColumn>
 
       <ClientCardDataColumn>
-        <ClientCardDataHeader>E-mail</ClientCardDataHeader>
+        <ClientCardDataHeader>{t('email')}</ClientCardDataHeader>
         {clients.map((c) => <ClientCardDataItem key={c.email}>{c.email}</ClientCardDataItem>)}
       </ClientCardDataColumn>
 
       <ClientCardDataColumn>
-        <ClientCardDataHeader>Compras</ClientCardDataHeader>
+        <ClientCardDataHeader>{t('sales')}</ClientCardDataHeader>
         {clients.map((c) => <ClientCardDataItem key={c.name + "_sales"}>{c.sales}</ClientCardDataItem>)}
       </ClientCardDataColumn>
 
       <ClientCardDataColumn>
-        <ClientCardDataHeader>Status</ClientCardDataHeader>
+        <ClientCardDataHeader>{t('status')}</ClientCardDataHeader>
         {clients.map((c) =>  <ClientCardDataItem
             key={c.name + "_status"}
             style={{

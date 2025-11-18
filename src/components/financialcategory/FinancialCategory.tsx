@@ -9,20 +9,31 @@ import {
   ColorDot,
 } from "./FinancialCategory.styled";
 
-// Dados do gráfico
-const data = [
-  { name: "Vendas", value: 400 },
-  { name: "Despesas", value: 300 },
-  { name: "Marketing", value: 200 },
-  { name: "Outros", value: 100 },
-];
-
-const COLORS = ["#3B82F6", "#6366F1", "#10B981", "#F97316"];
+import "@/i18n";
+import { useTranslation } from "react-i18next";
 
 const FinancialCategory: React.FC = () => {
+  const { t } = useTranslation();
+
+  // Traduções
+  const vendas = t("sales");
+  const despesas = t("expenses");
+  const marketing = t("marketing");
+  const outros = t("other");
+
+  // Dados corrigidos — agora são STRINGS e não objetos
+  const data = [
+    { name: vendas, value: 400 },
+    { name: despesas, value: 300 },
+    { name: marketing, value: 200 },
+    { name: outros, value: 100 },
+  ];
+
+  const COLORS = ["#3B82F6", "#6366F1", "#10B981", "#F97316"];
+
   return (
     <Card>
-      <Title>Categorias financeiras</Title>
+      <Title>{t("financialCategory")}</Title>
 
       <ChartContainer>
         <ResponsiveContainer width="100%" height="100%">
@@ -36,7 +47,7 @@ const FinancialCategory: React.FC = () => {
               innerRadius={40}
               outerRadius={70}
             >
-              {data.map((entry, index) => (
+              {data.map((_, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={COLORS[index % COLORS.length]}

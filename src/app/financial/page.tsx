@@ -13,10 +13,12 @@ import FinancialCategory from "@/components/financialcategory/FinancialCategory"
 import CashFlowCard from "@/components/cashflowcard/CashFlowCard";
 import ClientCardData from "@/components/clientcarddata/ClientCardData";
 import DataSalesCard from "@/components/datasales/DataSalesCard";
- 
+ import "@/i18n";
+import { useTranslation } from "react-i18next";
+
 
 function Page() {
-
+  const { t } = useTranslation();
   const transactions = [
   { date: "03/11/2025", product: "Xbox Series X", category: "Eletrônicos", amount: "R$ 4.500" },
   { date: "02/11/2025", product: "PS5", category: "Eletrônicos", amount: "R$ 4.200" },
@@ -29,25 +31,25 @@ function Page() {
         <FinancialContentContainer>
           <Balance>
             <Card
-              title="Saldo atual"
+              title={t('currentBalance')}
               price="R$ 82.300"
               percent="4,2%"
               reduced
             />
             <Card
-              title="Entrada do mês"
+              title={t('monthlyIncome')}
               price="R$ 8.920"
               percent="3,2%"
               reduced
             />
             <Card
-              title="Despesa do mês"
+              title={t('monthlyExpenses')}
               price="R$ 6.920"
               percent="2,2%"
               reduced
             />
             <Card
-              title="Saldo Líquido"
+              title={t('netBalance')}
               price="R$ 6.920"
               percent="2,2%"
               reduced

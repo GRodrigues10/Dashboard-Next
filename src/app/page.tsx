@@ -14,26 +14,37 @@ import { useRouter } from "next/navigation";
 export default function Page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
-
   const router = useRouter();
 
-  const logIn = () => {
-    const newErrors: { email?: string; password?: string } = {};
+  const logIn = async () => {
+    if (!email || !password) {
+      alert("Preencha todos os campos");
+      return;
+    }
 
-    if (!email.trim()) newErrors.email = "erro";
-    if (!password.trim()) newErrors.password = "erro";
+    const response = await fetch("http://localhost:4000/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
-    setErrors(newErrors);
-    if (Object.keys(newErrors).length > 0) return;
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.error);
+      return;
+    }
+
+    // Login OK → redireciona para home
     router.push("/home");
   };
 
   return (
     <LogInContainer>
       <h1>Painel de Vendas</h1>
+
       <LogInDisplay>
-        <InputField $error={!!errors.email}>
+        <InputField>
           <label>Email</label>
           <input
             type="email"
@@ -43,7 +54,7 @@ export default function Page() {
           />
         </InputField>
 
-        <InputField $error={!!errors.password}>
+        <InputField>
           <label>Senha</label>
           <input
             type="password"
@@ -59,6 +70,7 @@ export default function Page() {
           <Link href="/register">
             <span>Criar conta</span>
           </Link>
+
           <Link href="/forgotpassword">
             <span>Esqueceu a senha?</span>
           </Link>

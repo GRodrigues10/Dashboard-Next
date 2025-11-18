@@ -18,8 +18,11 @@ import { SalesTypes, ExpensesTypes } from "@/utils/types";
 import { useEffect, useState } from "react";
 import { fetchSales, fetchExpenses } from "@/api/api";
 import { formatPrice } from "@/utils/formatprice";
+import { useTranslation } from "react-i18next";
+
 
 export default function Home() {
+const { t } = useTranslation();
 
 
   return (
@@ -31,12 +34,12 @@ export default function Home() {
          <Cards> */}
 <Cards>
   <Card
-    title="Receita Total"
+    title={t('totalRevenue')}
     price={formatPrice(56600)}
     percent="3,2%" 
   />
    <Card
-    title="Despesa Total"
+    title={t('totalExpense')}
     price={formatPrice(26600)}
     percent="1,4%" 
   />

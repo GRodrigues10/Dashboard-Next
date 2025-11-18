@@ -11,27 +11,30 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import "@/i18n";
 
 export default function LineGraph() {
+  const { t } = useTranslation();
   const theme = useTheme();
   const isDark = theme.background === "#0f172a";
   const legendPaddingTop = 25;
   const legendPaddingBottom = 15;
 
   const [data, setData] = useState<
-    { name: string; Receita: number; Despesa: number }[]
+    { name: string; revenue: number; expense: number }[]
   >([]);
 
   useEffect(() => {
     // 🔹 Dados simulados (mock)
     const mockData = [
-      { name: "Jan", Receita: 9500, Despesa: 4800 },
-      { name: "Fev", Receita: 8700, Despesa: 4200 },
-      { name: "Mar", Receita: 16000, Despesa: 7200 },
-      { name: "Abr", Receita: 11000, Despesa: 5700 },
-      { name: "Mai", Receita: 5800, Despesa: 3000 },
-      { name: "Jun", Receita: 8700, Despesa: 4300 },
-      { name: "Jul", Receita: 13700, Despesa: 5900 },
+      { name: "Jan", revenue: 9500, expense: 4800 },
+      { name: "Fev", revenue: 8700, expense: 4200 },
+      { name: "Mar", revenue: 16000, expense: 7200 },
+      { name: "Abr", revenue: 11000, expense: 5700 },
+      { name: "Mai", revenue: 5800, expense: 3000 },
+      { name: "Jun", revenue: 8700, expense: 4300 },
+      { name: "Jul", revenue: 13700, expense: 5900 },
     ];
 
     setData(mockData);
@@ -79,17 +82,21 @@ export default function LineGraph() {
             }}
           />
 
+          {/* 🔹 Linhas usando tradução */}
           <Line
             type="monotone"
-            dataKey="Receita"
+            dataKey="revenue"
+            name={t("revenue")}
             stroke="#38BDF8"
             strokeWidth={3}
             dot={{ r: 5, fill: "#38BDF8" }}
             activeDot={{ r: 7 }}
           />
+
           <Line
             type="monotone"
-            dataKey="Despesa"
+            dataKey="expense"
+            name={t("expense")}
             stroke="#F97316"
             strokeWidth={3}
             dot={{ r: 5, fill: "#F97316" }}
@@ -115,7 +122,7 @@ export default function LineGraph() {
               textAnchor="middle"
               dominantBaseline="middle"
             >
-              Receita
+              {t("revenue")}
             </text>
 
             <rect
@@ -135,7 +142,7 @@ export default function LineGraph() {
               textAnchor="middle"
               dominantBaseline="middle"
             >
-              Despesa
+              {t("expense")}
             </text>
           </g>
         </LineChart>

@@ -10,25 +10,27 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useEffect, useState } from "react";
+import '@/i18n';
+import { useTranslation } from "react-i18next";
 
 const COLORS = ["#38BDF8", "#0EA5E9", "#14B8A6", "#F97316"];
 
 export default function PizzaGraph() {
+  const { t } = useTranslation();
   const theme = useTheme();
   const [data, setData] = useState<{ name: string; value: number }[]>([]);
 
-  useEffect(() => {
-    // 🔹 Dados simulados (mock)
-    const mockData = [
-      { name: "Beleza", value: 320 },
-      { name: "Eletrônicos", value: 780 },
-      { name: "Esportes", value: 410 },
-      { name: "Móveis", value: 210 },
-      { name: "Roupas", value: 580 },
-    ];
+ useEffect(() => {
+  const mockData = [
+    { name: t("beauty"), value: 320 },
+    { name: t("eletronics"), value: 780 },
+    { name: t("sports"), value: 410 },
+    { name: t("furniture"), value: 210 },
+    { name: t("clothes"), value: 580 },
+  ];
 
-    setData(mockData);
-  }, []);
+  setData(mockData);
+}, [t]);
 
   return (
     <div
@@ -40,7 +42,7 @@ export default function PizzaGraph() {
       }}
     >
       <h2 className="text-[1.3rem] font-normal mb-4 text-center w-full relative top-2">
-        Vendas por Categorias
+        {t('salesByCategory')}
       </h2>
 
       <div className="w-full h-40 px-4 relative top-2">
