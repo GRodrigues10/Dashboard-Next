@@ -51,7 +51,7 @@ Suporte a **3 idiomas**:
 
 ```bash
 git clone https://github.com/grodrigues10/dashboard-next.git
-cd SEU-REPO
+cd dashboard
 ```
 
 ### 2️⃣ Instalar dependências
