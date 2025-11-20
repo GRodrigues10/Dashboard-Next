@@ -8,25 +8,27 @@ import styled, {
 
 // 🔹 1. Define os temas
 export const lightTheme = {
-  background: "#f8fafc",       // fundo geral quase branco (azulado suave)
-  text: "#0f172a",             // texto escuro
-  primary: "#0284c7",          // azul mais forte para botões/títulos
-  secondary: "#0369a1",        // azul escuro para hover
-  cardBackground: "white",   // blocos com leve contraste
-  inputBackground: "#ffffff",  // inputs bem claros
-  border: "#cbd5e1",           // bordas sutis
-  buttonText: "#ffffff",       // texto branco nos botões
+  mode:'light',
+  background: "#f8fafc",      
+  text: "#0f172a",            
+  primary: "#0284c7",        
+  secondary: "#0369a1",      
+  cardBackground: "white",   
+  inputBackground: "#ffffff",   
+  border: "#cbd5e1",          
+  buttonText: "#ffffff",       
   shadow: "0 0 12px rgba(0, 0, 0, 0.1)",
 };
 
 export const darkTheme = {
-  background: "#0f172a",     // fundo bem escuro
-  text: "#e2e8f0",           // texto claro (quase branco)
-  primary: "#38bdf8",        // azul claro para títulos
-  secondary: "#60a5fa",      // azul um pouco mais vibrante para detalhes
-  cardBackground: "#1e293b", // fundo dos cards (azul escuro)
+  mode:'dark',
+  background: "#0f172a",     
+  text: "#e2e8f0",           
+  primary: "#38bdf8",      
+  secondary: "#60a5fa",     
+  cardBackground: "#1e293b", 
   inputBackground: "#1e293b",
-  border: "#334155",         // borda discreta
+  border: "#334155",         
   buttonText: "#0f172a",
   shadow: "0 0 10px rgba(0, 0, 0, 0.25)",
 };
@@ -35,6 +37,7 @@ export const darkTheme = {
 // 🔹 2. Tipagem do tema
 declare module "styled-components" {
   export interface DefaultTheme {
+    mode: string,
     background: string;
     text: string;
     primary: string;

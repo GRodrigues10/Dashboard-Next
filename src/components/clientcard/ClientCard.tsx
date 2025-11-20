@@ -12,7 +12,7 @@ function ClientCard() {
       <h2>2.456</h2>
       <p>
         <User />
-        1946
+        1.719
       </p>
     </ClientContainer>
   );

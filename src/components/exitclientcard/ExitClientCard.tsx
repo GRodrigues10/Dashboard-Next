@@ -10,10 +10,10 @@ function ExitClientCard() {
   return (
     <ExitClientCardContainer>
       <h1>{t('lostCustomers')}</h1>
-      <h2>19</h2>
-      <p>
+      <h2>210</h2>
+      <p style={{color:'red'}}>
         <ChevronDown/>
-        1,4%
+        8,55%
       </p>
     </ExitClientCardContainer>
   );

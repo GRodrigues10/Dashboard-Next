@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Label } from "recharts";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { useTranslation } from "react-i18next";
 import "@/i18n";
 
@@ -57,6 +57,7 @@ const StatusClientCardContainer = styled.div`
 
 export const StatusClientCard = () => {
   const { t } = useTranslation();
+  const theme = useTheme(); // 👈 PEGA O TEMA AQUI!
 
   const data = [
     { name: t("active"), value: 70 },
@@ -69,7 +70,7 @@ export const StatusClientCard = () => {
 
   return (
     <StatusClientCardContainer>
-      <h3>{t("customersStatus")}</h3>
+      <h3>{t("customerStatus")}</h3>
 
       <div style={{ width: "100%", height: 282 }}>
         <ResponsiveContainer>
@@ -85,12 +86,17 @@ export const StatusClientCard = () => {
               paddingAngle={0}
             >
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
               ))}
+
+              {/* TEXTO CENTRAL COM A COR DO TEMA */}
               <Label
                 value={`${percentualAtivos}%`}
                 position="center"
-                fill="white"
+                fill={theme.text} 
                 style={{ fontSize: 30, fontWeight: "bold" }}
               />
             </Pie>

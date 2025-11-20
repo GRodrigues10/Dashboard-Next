@@ -21,20 +21,23 @@ export default function CashFlowCard() {
   const legendPaddingTop = 33;
   const legendPaddingBottom = 25;
 
-  // 🔹 Labels traduzidos
-  const entradaLabel = t("inCome");   // Entrada
-  const saidaLabel = t("outflow");    // Saída
 
-  // 🔹 Dados traduzidos dinamicamente
-  const data = [
-    { name: "Jan", [entradaLabel]: 4000, [saidaLabel]: 2400 },
-    { name: "Fev", [entradaLabel]: 3000, [saidaLabel]: 1398 },
-    { name: "Mar", [entradaLabel]: 7000, [saidaLabel]: 1800 },
-    { name: "Abr", [entradaLabel]: 2780, [saidaLabel]: 3908 },
-    { name: "Mai", [entradaLabel]: 1890, [saidaLabel]: 4800 },
-    { name: "Jun", [entradaLabel]: 2390, [saidaLabel]: 2800 },
-    { name: "Jul", [entradaLabel]: 3490, [saidaLabel]: 1300 },
-  ];
+  const entradaLabel = t("inCome");   
+  const saidaLabel = t("outflow");    
+const data = [
+  { name: "Jan", [entradaLabel]: 9500, [saidaLabel]: 4800 },
+  { name: "Fev", [entradaLabel]: 8700, [saidaLabel]: 4200 },
+  { name: "Mar", [entradaLabel]: 16000, [saidaLabel]: 5200 },
+  { name: "Abr", [entradaLabel]: 11000, [saidaLabel]: 5700 },
+  { name: "Mai", [entradaLabel]: 5800, [saidaLabel]: 3000 },
+  { name: "Jun", [entradaLabel]: 8700, [saidaLabel]: 4300 },
+  { name: "Jul", [entradaLabel]: 13700, [saidaLabel]: 5900 },
+  { name: "Ago", [entradaLabel]: 16000, [saidaLabel]: 4200 },
+  { name: "Set", [entradaLabel]: 11000, [saidaLabel]: 2700 },
+  { name: "Out", [entradaLabel]: 5800, [saidaLabel]: 3000 },
+  { name: "Nov", [entradaLabel]: 8700, [saidaLabel]: 4300 },
+  // { name: "Dez", [entradaLabel]: 13700, [saidaLabel]: 2900 },
+];
 
   const cardColor =
     theme.background === "light" ? "#ffffff" : theme.cardBackground;
@@ -72,7 +75,7 @@ export default function CashFlowCard() {
             data={data}
             margin={{
               top: 50 + legendPaddingBottom,
-              right: 20,
+              right: 33,
               left: 20,
               bottom: 30,
             }}
@@ -97,7 +100,7 @@ export default function CashFlowCard() {
               }}
             />
 
-            {/* 🔹 Linha Entrada */}
+      
             <Line
               type="monotone"
               dataKey={entradaLabel}
@@ -107,7 +110,7 @@ export default function CashFlowCard() {
               activeDot={{ r: 7 }}
             />
 
-            {/* 🔹 Linha Saída */}
+           
             <Line
               type="monotone"
               dataKey={saidaLabel}
@@ -117,7 +120,7 @@ export default function CashFlowCard() {
               activeDot={{ r: 7 }}
             />
 
-            {/* 🔹 Título central */}
+           
             <text
               x="50%"
               y={legendPaddingTop}

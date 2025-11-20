@@ -4,10 +4,10 @@ export const Card = styled.div`
   width: 100%;
   height: 300px;
   background-color: ${({ theme }) =>
-    theme.background === "light" ? "#FFFFFF" : theme.cardBackground}; // branco no light
+    theme.mode === "light" ? "#FFFFFF" : theme.cardBackground};
   box-shadow: ${({ theme }) =>
-    theme.background === "light"
-      ? "0 8px 25px rgba(0, 0, 0, 0.15)" // sombra preta no light
+    theme.mode === "light"
+      ? "0 8px 25px rgba(0, 0, 0, 0.15)"
       : theme.shadow};
   border-radius: 12px;
   padding: 20px;
@@ -28,8 +28,7 @@ export const Card = styled.div`
 `;
 
 export const Title = styled.h3`
-  margin: 0;
-  margin-bottom: 16px;
+  margin: 0 0 16px 0;
   font-size: 1.3rem;
   text-align: center;
   color: ${({ theme }) => theme.text};
@@ -52,11 +51,16 @@ export const LegendContainer = styled.div`
   place-items: center;
 `;
 
-export const LegendItem = styled.div`
+export const LegendItem = styled.div<{ isLast?: boolean }>`
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
+  padding-bottom: 6px;
+
+  border-bottom: ${({ theme, isLast }) =>
+    isLast ? "none" : `1px solid ${theme.border}`};
+
+  color: ${({ theme }) => theme.text};
 `;
 
 export const ColorDot = styled.div<{ color: string }>`

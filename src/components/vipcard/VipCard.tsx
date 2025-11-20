@@ -10,8 +10,8 @@ function VipCard() {
   return (
     <VipCardContainer>
         <h1>{t('vipCustormers')}</h1>
-        <h2>92</h2>
-        <p><ChevronUp/>1,5%</p>
+        <h2>232</h2>
+        <p style={{color:'rgb(96, 165, 250)'}}><ChevronUp/>9,45%</p>
     </VipCardContainer>
   )
 }

@@ -30,11 +30,16 @@ export default function LineGraph() {
     const mockData = [
       { name: "Jan", revenue: 9500, expense: 4800 },
       { name: "Fev", revenue: 8700, expense: 4200 },
-      { name: "Mar", revenue: 16000, expense: 7200 },
+      { name: "Mar", revenue: 16000, expense: 5200 },
       { name: "Abr", revenue: 11000, expense: 5700 },
       { name: "Mai", revenue: 5800, expense: 3000 },
       { name: "Jun", revenue: 8700, expense: 4300 },
       { name: "Jul", revenue: 13700, expense: 5900 },
+      { name: "Ago", revenue: 16000, expense: 4200 },
+      { name: "Set", revenue: 11000, expense: 2700 },
+      { name: "Out", revenue: 5800, expense: 3000 },
+      { name: "Nov", revenue: 8700, expense: 4300 },
+      // { name: "Dez", revenue: 13700, expense: 2900 },
     ];
 
     setData(mockData);
@@ -54,7 +59,7 @@ export default function LineGraph() {
           data={data}
           margin={{
             top: 70 + legendPaddingBottom,
-            right: 20,
+            right: 30,
             left: 20,
             bottom: 20,
           }}
@@ -96,7 +101,7 @@ export default function LineGraph() {
           <Line
             type="monotone"
             dataKey="expense"
-            name={t("expense")}
+            name={t("expenses")}
             stroke="#F97316"
             strokeWidth={3}
             dot={{ r: 5, fill: "#F97316" }}
@@ -142,7 +147,7 @@ export default function LineGraph() {
               textAnchor="middle"
               dominantBaseline="middle"
             >
-              {t("expense")}
+              {t("expenses")}
             </text>
           </g>
         </LineChart>

@@ -32,26 +32,26 @@ function Page() {
           <Balance>
             <Card
               title={t('currentBalance')}
-              price="R$ 82.300"
+              price="R$ 78.200"
               percent="4,2%"
               reduced
             />
             <Card
               title={t('monthlyIncome')}
-              price="R$ 8.920"
-              percent="3,2%"
+              price="R$ 8.700"
+              percent="11,1%"
               reduced
             />
             <Card
               title={t('monthlyExpenses')}
-              price="R$ 6.920"
-              percent="2,2%"
+              price="R$ 4.300"
+              percent="5,5%"
               reduced
             />
             <Card
               title={t('netBalance')}
-              price="R$ 6.920"
-              percent="2,2%"
+              price="R$ 4.400"
+              percent="5,6%"
               reduced
             />
           </Balance>

@@ -12,8 +12,8 @@ function NewClientCard() {
     <NewClientCardContainer>
      
             <h1>{t('newCustomers')}</h1>
-            <h2>138</h2>
-            <p><ChevronUp/> 14,2%</p>
+            <h2>440</h2>
+            <p><ChevronUp/> 17,91%</p>
   
     </NewClientCardContainer>
   )

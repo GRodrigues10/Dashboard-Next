@@ -15,13 +15,11 @@ import { useTranslation } from "react-i18next";
 const FinancialCategory: React.FC = () => {
   const { t } = useTranslation();
 
-  // Traduções
   const vendas = t("sales");
   const despesas = t("expenses");
   const marketing = t("marketing");
   const outros = t("other");
 
-  // Dados corrigidos — agora são STRINGS e não objetos
   const data = [
     { name: vendas, value: 400 },
     { name: despesas, value: 300 },

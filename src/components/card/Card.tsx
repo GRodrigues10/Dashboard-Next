@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 export interface CardContent {
   title: string;
-  price: number;
+  price: string;
   percent: string;
   expanded?: boolean;
   reduced?: boolean;
@@ -35,7 +35,7 @@ const Card: React.FC<CardContent> = ({
         <h2>{price}</h2>
         <p
           style={{
-            color: isPositive ? "#94a3b8" : "red",
+            color: isPositive ? "rgb(96, 165, 250)" : "red",
             display: "flex",
             alignItems: "center",
             gap: "0.25rem",

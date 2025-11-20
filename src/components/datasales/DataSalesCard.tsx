@@ -26,11 +26,11 @@ const DataSalesCard = () => {
 
   // Agora os dados usam t()
   const mockSales: SalesTypes[] = [
-    { id: 1, date: "05/01/2025", user:"Gabriel", product: "iPhone 14 Pro", category: t("electronics"), price: 7200 },
-    { id: 2, date: "12/01/2025", user:"João", product: "Camisa Nike Dri-Fit", category: t("clothes"), price: 230 },
-    { id: 3, date: "22/01/2025", user:"Matheus", product: "Perfume Dior Sauvage", category: t("beauty"), price: 580 },
-    { id: 4, date: "28/01/2025", user:"Maria", product: "Sofá Retrátil 3 Lugares", category: t("furniture"), price: 1890 },
-    { id: 5, date: "02/02/2025", user:"Beatriz", product: "Fone Bluetooth JBL", category: t("electronics"), price: 460 },
+    { id: 1, date: "20/11/2025", user:"Gabriel", product: "iPhone 14 Pro", category: t("electronics"), price: 7200 },
+    { id: 2, date: "19/11/2025", user:"João", product: "Camisa Nike Dri-Fit", category: t("clothes"), price: 230 },
+    { id: 3, date: "19/11/2025", user:"Matheus", product: "Perfume Dior Sauvage", category: t("beauty"), price: 580 },
+    { id: 4, date: "18/11/2025", user:"Maria", product: "Sofá Retrátil 3 Lugares", category: t("furniture"), price: 1890 },
+    { id: 5, date: "18/11/2025", user:"Beatriz", product: "Fone Bluetooth JBL", category: t("electronics"), price: 460 },
   ];
 
   return (
