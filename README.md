@@ -95,33 +95,41 @@ Este projeto é de uso livre para estudos.
 ## Imagens do Projeto
 
 ### Tela de Login
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/05443773-622a-4e10-90a0-0dcdba6803ff" />
 
-
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/3e111d1b-8bce-4435-bb2e-3527be2fadc6" />
 
 ### Tela de Cadastro
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/942bec3d-564a-4114-9d10-3386ea394ef0" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/6ccde512-05f8-4698-bc73-4c481439f8ec" />
+
 
 ### Tela de Esqueci a Senha
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/9c1075bf-3555-4097-a878-f651f49aba83" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/928bfd57-b1a9-4fd7-864d-29e280e90c70" />
+
 
 ### Tela Incial
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/30474c4a-7f7e-4e9b-8579-2cb363249fb0" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/01cb89a9-7574-4e97-9aac-e76f8a4d7a89" />
+
 
 ### Tela de Clientes
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/a6d28436-8dfe-412d-83f7-f50e0e75dbe3" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/3b347860-1f3a-4365-a883-94acb4aec112" />
+
 
 ### Tela de Finanças
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/516aadfb-f4c1-4d48-9b9a-fe1609492e86" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/7d9b13a1-6769-47d1-825a-427044b462e6" />
+
 
 ### Tela de Configurações
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/11532612-9191-486f-bd59-c3e8ea1d690f" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/10a334d8-bee4-406a-a769-7039927ce77c" />
+
 
 ### Modo Claro
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/12fb5180-edd1-4544-892b-a0c7338cfed4" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/2d038d5a-df57-4a42-8a32-4b47da8ff04a" />
+
 
 ### Mudança de Idioma
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/86021bab-c753-40d3-a5db-9ca1f49745d7" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/6d0d62b8-d688-49e6-9e67-1f16449511b3" />
+
+
 
 
 
