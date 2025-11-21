@@ -4,12 +4,16 @@ import { useState } from "react";
 import { InputField, SubmitButton } from "./ForgotPassword.styled";
 import Link from "next/link";
 import { ForgotContainer, ForgotDisplay } from "./ForgotPassword.styled";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 
 export default function Page() {
   const [email, setEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleReset = async () => {
     if (!email || !newPassword || !confirmPassword) {
@@ -40,7 +44,7 @@ export default function Page() {
       }
 
       alert("Senha atualizada com sucesso!");
-      window.location.href = "/"; 
+      window.location.href = "/";
     } catch {
       setError("Erro no servidor.");
     }
@@ -49,9 +53,11 @@ export default function Page() {
   return (
     <ForgotContainer>
       <h1>Esqueceu a Senha?</h1>
+
       <ForgotDisplay>
         <p>Digite seu email e defina uma nova senha.</p>
 
+        {/* EMAIL */}
         <InputField>
           <label>Email</label>
           <input
@@ -62,24 +68,46 @@ export default function Page() {
           />
         </InputField>
 
+        {/* NOVA SENHA */}
         <InputField>
           <label>Nova Senha</label>
-          <input
-            type="password"
-            placeholder="Digite sua nova senha"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-          />
+
+          <div className="password-wrapper">
+            <input
+              type={showNewPassword ? "text" : "password"}
+              placeholder="Digite sua nova senha"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+            />
+
+            <span
+              className="eye"
+              onClick={() => setShowNewPassword(!showNewPassword)}
+            >
+              {showNewPassword ? <MdVisibilityOff /> : <MdVisibility />}
+            </span>
+          </div>
         </InputField>
 
+        {/* CONFIRMAR NOVA SENHA */}
         <InputField>
           <label>Confirmar Nova Senha</label>
-          <input
-            type="password"
-            placeholder="Confirme sua nova senha"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+
+          <div className="password-wrapper">
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirme sua nova senha"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+
+            <span
+              className="eye"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? <MdVisibilityOff /> : <MdVisibility />}
+            </span>
+          </div>
         </InputField>
 
         {error && <p style={{ color: "red" }}>{error}</p>}
@@ -87,7 +115,6 @@ export default function Page() {
         <SubmitButton onClick={handleReset}>
           Atualizar Senha
         </SubmitButton>
-
       </ForgotDisplay>
     </ForgotContainer>
   );

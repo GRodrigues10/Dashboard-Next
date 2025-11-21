@@ -68,6 +68,35 @@ export const InputField = styled.div`
     font-size: 0.95rem;
   }
 
+ 
+  .password-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .password-wrapper input {
+    width: 100%;
+    padding-right: 42px;
+  }
+
+
+  .eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 22px;
+    color: #cbd5e1;
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+
+  .eye:hover {
+    opacity: 1;
+    color: #ffffff;
+  }
+
   input {
     background-color: #2e3a50;
     color: #f8fafc;

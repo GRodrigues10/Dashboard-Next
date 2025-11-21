@@ -65,11 +65,34 @@ export const InputField = styled.div<InputFieldProps>`
     font-size: 1rem;
   }
 
+  /* WRAPPER DO INPUT DE SENHA */
+  .password-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  /* ÍCONE DO OLHO */
+  .eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #38bdf8; /* azul clarinho ao passar o mouse */
+    }
+  }
+
   input {
     background-color: #2e3a50;
     color: #f8fafc;
     width: 100%;
     padding: 12px 16px;
+    padding-right: 45px; /* espaço pro olho */
     border-radius: 6px;
     border: 1px solid #273449;
     font-size: 1rem;
@@ -86,15 +109,13 @@ export const InputField = styled.div<InputFieldProps>`
       transition: color 0.2s ease;
     }
 
-    /* Se tiver erro, muda borda e placeholder pra vermelho */
     ${({ $error }) =>
       $error &&
       css`
         border-color: #ef4444 !important;
         box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
-
         &::placeholder {
-          color: #f87171; /* vermelho suave */
+          color: #f87171;
         }
       `}
   }

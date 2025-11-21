@@ -10,10 +10,12 @@ import {
 } from "./LogIn.styled";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 
 export default function Page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
   const logIn = async () => {
@@ -35,7 +37,6 @@ export default function Page() {
       return;
     }
 
-    // Login OK → redireciona para home
     router.push("/home");
   };
 
@@ -44,6 +45,7 @@ export default function Page() {
       <h1>Painel de Vendas</h1>
 
       <LogInDisplay>
+        {/* EMAIL */}
         <InputField>
           <label>Email</label>
           <input
@@ -54,18 +56,31 @@ export default function Page() {
           />
         </InputField>
 
+        {/* SENHA COM OLHO */}
         <InputField>
           <label>Senha</label>
-          <input
-            type="password"
-            placeholder="Digite sua senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+
+          <div className="password-wrapper">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Digite sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <span
+              className="eye"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+            {showPassword ? <MdVisibilityOff /> : <MdVisibility /> }
+            </span>
+          </div>
         </InputField>
 
+        {/* BOTÃO */}
         <SubmitButton onClick={logIn}>Entrar</SubmitButton>
 
+        {/* LINKS */}
         <LogInUser>
           <Link href="/register">
             <span>Criar conta</span>

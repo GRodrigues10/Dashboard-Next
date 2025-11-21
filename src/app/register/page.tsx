@@ -10,12 +10,19 @@ import {
   NameRow,
 } from "./Register.styled";
 
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
+
 export default function Page() {
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const [error, setError] = useState("");
 
   const handleRegister = async () => {
@@ -34,9 +41,7 @@ export default function Page() {
     try {
       const res = await fetch("http://localhost:4000/api/register", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: fullName,
           email,
@@ -52,7 +57,7 @@ export default function Page() {
       }
 
       alert("Usuário cadastrado com sucesso!");
-      window.location.href = "/"; // redireciona para login
+      window.location.href = "/"; 
     } catch (error) {
       setError("Erro no servidor.");
     }
@@ -94,31 +99,47 @@ export default function Page() {
           />
         </InputField>
 
+    
         <InputField>
           <label>Senha</label>
-          <input
-            type="password"
-            placeholder="Digite sua senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="password-wrapper">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Digite sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <span
+              className="eye"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <MdVisibilityOff /> : <MdVisibility />}
+            </span>
+          </div>
         </InputField>
 
+       
         <InputField>
           <label>Confirmar Senha</label>
-          <input
-            type="password"
-            placeholder="Confirme sua senha"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+          <div className="password-wrapper">
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirme sua senha"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <span
+              className="eye"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? <MdVisibilityOff /> : <MdVisibility />}
+            </span>
+          </div>
         </InputField>
 
         {error && <p style={{ color: "red" }}>{error}</p>}
 
-        <SubmitButton onClick={handleRegister}>
-          Cadastrar
-        </SubmitButton>
+        <SubmitButton onClick={handleRegister}>Cadastrar</SubmitButton>
 
         <RegisterUser>
           <span>Já tem uma conta?</span>

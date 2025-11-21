@@ -51,6 +51,7 @@ export const InputField = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 
   label {
     color: #f8fafc;
@@ -58,11 +59,17 @@ export const InputField = styled.div`
     font-size: 0.95rem;
   }
 
+  /* wrapper do input + ícone */
+  .password-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
   input {
     background-color: #2e3a50;
     color: #f8fafc;
     width: 100%;
-    padding: 12px 16px;
+    padding: 12px 44px 12px 16px; /* espaço pro olho */
     border-radius: 8px;
     border: 1px solid #273449;
     font-size: 1rem;
@@ -76,6 +83,22 @@ export const InputField = styled.div`
 
     &::placeholder {
       color: #94a3b8;
+    }
+  }
+
+  /* ícone do olho */
+  .eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      color: #38bdf8;
     }
   }
 `;
