@@ -112,6 +112,7 @@ export const MenuLinksMobile = styled.div`
     display: flex;
     height: 100%;
     margin-top: auto;
+  
 
     svg {
       margin-top: auto;
@@ -134,6 +135,7 @@ export const MenuExit = styled.div`
     display: flex;
     margin-top: auto;
     padding: 20px;
+    margin-bottom: 20px;
 
     svg {
       color: red;
