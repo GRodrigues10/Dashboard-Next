@@ -39,7 +39,7 @@ export default function Page() {
     const fullName = `${name} ${lastname}`;
 
     try {
-      const res = await fetch("http://localhost:4000/api/register", {
+      const res = await fetch("https://dashboard-api-674f.onrender.com/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
