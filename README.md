@@ -2,6 +2,8 @@
 
 Um dashboard de vendas moderno e responsivo, com autenticação completa e diversas funcionalidades voltadas para análise visual, acessibilidade e experiência do usuário.
 
+### Acesse o Dashboard: https://dashboard-next-theta-orpin.vercel.app/
+
 ---
 
 ## 🚀 Funcionalidades
