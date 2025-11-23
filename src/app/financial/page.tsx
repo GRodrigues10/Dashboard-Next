@@ -32,7 +32,7 @@ function Page() {
           <Balance>
             <Card
               title={t('currentBalance')}
-              price="R$ 78.200"
+              price="R$ 76.700"
               percent="4,2%"
               reduced
             />

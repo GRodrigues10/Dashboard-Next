@@ -35,12 +35,12 @@ const { t } = useTranslation();
 <Cards>
   <Card
     title={t('totalRevenue')}
-    price={formatPrice(114900)}
+    price={formatPrice(126900)}
     percent="3,2%" 
   />
    <Card
     title={t('totalExpense')}
-    price={formatPrice(47300)}
+    price={formatPrice(50200)}
     percent="1,4%" 
   />
 </Cards>
@@ -57,7 +57,7 @@ const { t } = useTranslation();
         </HomePart1>
 
         <HomePart2>
-          <CircleGraph percent={58.8}/>
+          <CircleGraph percent={60.4}/>
           <BarGraph />
         </HomePart2>
       </HomeContent>

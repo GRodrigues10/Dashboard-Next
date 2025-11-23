@@ -49,7 +49,7 @@ export default function BarGraph() {
       { name: "Set", clientesNovos: 35, clientesPerdidos: 22 },
       { name: "Out", clientesNovos: 45, clientesPerdidos: 18 },
       { name: "Nov", clientesNovos: 50, clientesPerdidos: 20 },
-      // { name: "Dez", clientesNovos: 55, clientesPerdidos: 15 },
+      { name: "Dez", clientesNovos: 55, clientesPerdidos: 15 },
     ];
 
     setData(mockData);

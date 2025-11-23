@@ -36,7 +36,7 @@ const data = [
   { name: "Set", [entradaLabel]: 11000, [saidaLabel]: 2700 },
   { name: "Out", [entradaLabel]: 5800, [saidaLabel]: 3000 },
   { name: "Nov", [entradaLabel]: 8700, [saidaLabel]: 4300 },
-  // { name: "Dez", [entradaLabel]: 13700, [saidaLabel]: 2900 },
+  { name: "Dez", [entradaLabel]: 13700, [saidaLabel]: 2900 },
 ];
 
   const cardColor =

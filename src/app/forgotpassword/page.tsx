@@ -57,7 +57,7 @@ export default function Page() {
       <ForgotDisplay>
         <p>Digite seu email e defina uma nova senha.</p>
 
-        {/* EMAIL */}
+   
         <InputField>
           <label>Email</label>
           <input
@@ -68,7 +68,6 @@ export default function Page() {
           />
         </InputField>
 
-        {/* NOVA SENHA */}
         <InputField>
           <label>Nova Senha</label>
 
@@ -89,7 +88,7 @@ export default function Page() {
           </div>
         </InputField>
 
-        {/* CONFIRMAR NOVA SENHA */}
+   
         <InputField>
           <label>Confirmar Nova Senha</label>
 

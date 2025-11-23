@@ -39,7 +39,7 @@ export default function LineGraph() {
       { name: "Set", revenue: 11000, expense: 2700 },
       { name: "Out", revenue: 5800, expense: 3000 },
       { name: "Nov", revenue: 8700, expense: 4300 },
-      // { name: "Dez", revenue: 13700, expense: 2900 },
+      { name: "Dez", revenue: 13700, expense: 2900 },
     ];
 
     setData(mockData);
