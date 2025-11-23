@@ -109,15 +109,18 @@ Este projeto é de uso livre para estudos.
 
 
 ### Tela Incial
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/01cb89a9-7574-4e97-9aac-e76f8a4d7a89" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/2fbee2ff-d08d-4ad9-bcb2-6e8e8a67f792" />
+
 
 
 ### Tela de Clientes
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/3b347860-1f3a-4365-a883-94acb4aec112" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/9d53d76e-0302-4344-9033-83c6b31a5693" />
+
 
 
 ### Tela de Finanças
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/7d9b13a1-6769-47d1-825a-427044b462e6" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/d0f3a299-b893-4152-8dd3-9b0db3c2f934" />
+
 
 
 ### Tela de Configurações
