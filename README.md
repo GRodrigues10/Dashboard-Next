@@ -44,6 +44,7 @@ Suporte a **3 idiomas**:
 * **EmailJS**
 * **i18next (i18n)**
 * **Node.js + Express (backend de autenticação)**
+* **Jest**
 
 ---
 
