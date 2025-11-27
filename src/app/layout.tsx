@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Dashboard",
   description: "Painel de vendas",
   icons: {
-    icon: "/dash.svg",
+    icon: "/dashboard_.svg",
   },
 };
 
