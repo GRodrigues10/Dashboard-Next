@@ -85,7 +85,7 @@ export const MenuLinksMobile = styled.div`
   color: ${({ theme }) => theme.text};
   padding: 20px;
   padding-top: 80px;
-  background-color: ${({ theme }) => theme.cardBackground};
+  background-color: ${({ theme }) => theme.mobileMenu};
   z-index: 99999;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;

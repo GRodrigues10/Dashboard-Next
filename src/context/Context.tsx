@@ -9,7 +9,8 @@ import styled, {
 // 🔹 1. Define os temas
 export const lightTheme = {
   mode:'light',
-  background: "#f8fafc",      
+  background: "#f8fafc",
+  mobileMenu:'#e2e8f0',      
   text: "#0f172a",            
   primary: "#0284c7",        
   secondary: "#0369a1",      
@@ -22,7 +23,8 @@ export const lightTheme = {
 
 export const darkTheme = {
   mode:'dark',
-  background: "#0f172a",     
+  background: "#0f172a",
+  mobileMenu:'#111827',      
   text: "#e2e8f0",           
   primary: "#38bdf8",      
   secondary: "#60a5fa",     
@@ -39,6 +41,7 @@ declare module "styled-components" {
   export interface DefaultTheme {
     mode: string,
     background: string;
+    mobileMenu:string,
     text: string;
     primary: string;
     secondary: string;
