@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/context/Context";
 
 export const metadata: Metadata = {
   title: "Dashboard",
-  description: "Painel de vendas",
+  description: "Painel de controle moderno para monitorar vendas, acompanhar métricas e gerenciar dados em tempo real.",
   icons: {
     icon: "/dashboard_.svg",
   },
