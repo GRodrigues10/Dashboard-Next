@@ -27,7 +27,7 @@ export default function Page() {
     }
 
     try {
-      const res = await fetch("https://dashboard-api-674f.onrender.com/api/forgotpassword", {
+      const res = await fetch("https://dashboard-api-q91w.onrender.com/api/forgotpassword", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
